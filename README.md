@@ -1,110 +1,89 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Splash Swim School
 
-Welcome PhilEllis,
+<h1 align="center"><img src="documents/AnamcaraPreview.png"/></h1>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="documents/anamcaral.png" width="30px" /></a> Live website
 
-## Gitpod Reminders
+<a href="https://github.com/PhilEllis/AnamCara-milestone-3/tree/main"><img src="documents/githublogo.png" width="30px" /></a> GitHub Repository
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="documents/herokulogo.png" width="30px" /></a> Heroku Repository
 
-`python3 -m http.server`
+# Welcome to Splash Swim School!
 
-A blue button should appear to click: _Make Public_,
+ Welcome to **Splash Swim School!** 
+  
 
-Another blue button should appear to click: _Open Browser_.
+Founded by two dedicated mothers, Splash Swim School has evolved from its humble beginnings as a small local swim class into a remarkable institution exclusively focused on delivering high-quality swimming lessons for children of all skill levels. This exceptional swim school has not only flourished but has also emerged as the premier destination for parents seeking the best swimming education for their children.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  
 
-A blue button should appear to click: _Make Public_,
+Despite the impressive growth of Splash Swim School, their online presence has not kept pace with their physical expansion. With a limited online presence restricted to social media, Splash Swim School has now recognised the urgent need for a comprehensive website. This website will not only align with their brand identity but also enhance their daily operations by providing streamlined services to both parents and staff.
 
-Another blue button should appear to click: _Open Browser_.
+  
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The Splash Swim School Website and Database System will be a web-based platform designed to streamline the registration process for parents and improve course management for the swim school. The system will allow parents to easily select and pay for swim courses, create parent and child profiles, and provide essential information. For the swim school, it will facilitate efficient course capacity & payment management, enrolment tracking, and access to crucial child details.
 
-To log into the Heroku toolbelt CLI:
+**The main Business Needs are:**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+-   **Clear Course Information:** Splash Swim School needs a clear and concise method of communicating the specific swim levels they offer and defining the prerequisites for each level. This is crucial to ensure that only capable children are enrolled in appropriate courses and to prevent course swapping after the initial class which majorly impacts course capacity levels and the required staff to children ratios.  
+    
+-   **Streamlined Payment Process:** The school is seeking an efficient payment system that eliminates the need for persistent follow-ups with parents for class fees. Their goal is to receive full payment at the time of booking.  
+    
+-   **Standardised Child Information:** To enhance both insurance and operational aspects, Splash Swim School requires standardised child data. Currently, information provided by parents via email often lacks key details, leading to administrative efforts to collect missing information.  
+    
+-   **Flexibility in Level Changes:** The swim school needs the capability to facilitate course level changes for children according to their abilities. Some students may excel quickly and require advancement to higher levels early in their course and others may need the support of a lower course.  
+    
+-   **Enrolment Management:** Staff require the ability to remove a child from a class when necessary is essential for efficient management of course capacity levels.  
+    
 
-------
+These business needs are not only aimed at improving the operational efficiency of the Swim School but are also designed to provide a more streamlined and informed process for parents, enhancing their overall experience. Addressing these business needs will optimise staff efficiency by reducing administrative hours spent on enrolment, payment tracking, and capacity management. This, in turn, will free up staff hours allowing the business to enhance lesson quality through increased teacher-to-child ratios.
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Table of Contents
 
-**September 20 2023:** Update Python version to 3.9.17.
+- [User Experience (UX)](#UX)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- [Features](#features)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- [Technologies Used](#technologies)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- [Testing](#testing)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+ - [Deployment](#deployment)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- [Credits](#credits)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<a name="UX"></a>
+## User Experience (UX)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## User Stories - 
+- #### **Viewing and Navigation:**
+    1. As a parent, I want to easily view the different swim course levels and their descriptions.
+    2. As a parent, I want to see the prerequisites for each swim level to understand which level is suitable for my child and ensure i make the right choice.
+    3. As an admin, I want a user-friendly dashboard to navigate and manage the swim school's website and database efficiently.
+    
+    
+- #### **Registration and User Accounts:**
+    1. As a parent, I want to register for an account to access swim course information.
+    2. As a parent, I want to create a parent profile and add my child's information.
+    3. As a parent, I want the ability to create multiple child profiles to account for siblings.
+    4. As a parent, I want to be able to delete my parent profile and my Child's profile from the system. 
+    5. As an admin, I want to ensure that certain fields are completed correctly and that partial or inaccurate parent and child profiles cannot be submitted. 
+    6. As an admin, I need to know to be able to see what the child's information is linked to each enrolment. 
+   
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- #### **Purchasing and Checkout:**
+    1. As a parent, I want to select and purchase a swim course for my child.
+    2. As a parent, I want a streamlined payment process with the option to pay in full upon booking.
+    3. As an admin, I want to track and manage payments, ensuring they are processed smoothly.
+    4. As admin, i want to ensure that the course capacity is not exceeded and once full parents are unable to purchase that level of course. 
+    
+### User Stories - Business Owner
+- #### **Admin & Course Management:**
+    1. As an admin, I want to standardize and collect essential child information during registration.
+    2. As an admin, I want the ability to change a child's swim level when they need to move up or down based on their progress.
+    3. As an admin, I want to manage course capacity, track enrollments, and remove a child from a class when necessary.
+    4. As an admin, I want to have a clear overview of enrollment, payment status, and capacity levels to improve course management.
