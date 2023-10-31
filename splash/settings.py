@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zq^3wl&qgz0+=ym5=rfyv$%_1(ujd_(#=0pdhnv@kwkeuw1+49
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-philellis-splashswimsch-rmrcq88ra5w.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-philellis-splashswimsch-y886wql2wow.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -80,6 +80,16 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'splash.wsgi.application'
 
