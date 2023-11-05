@@ -13,7 +13,7 @@
 {% block content %}
      <!-- ======= Hero Section adapted from HeroBiz Template BootstrapMade.com ======= -->
     <section id="hero">
-      <div class="hero-container">
+      <div class="hero-container container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
           <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
           <div class="carousel-inner" role="listbox">
@@ -55,4 +55,72 @@
     </div>
   </section>
   <!-- End Hero Section -->
+  <main>
+  <!-- ======= Promotion Banner ======= -->
+  <section>
+  <div id="promo-banner" class="container-fluid">
+  <div class="row text-center">
+    <div>
+        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+    </div>            
+  </div>
+</div>
+</section>
+<!-- ======= About Splash Section ======= -->
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h3>Who We Are</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="about-splash">
+          <div class="splash-img">
+            <img src="/media/locations.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="splash-info">
+            <h4>Swim</h4>
+            <span>Hebron</span>
+            <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+          </div>
+        </div>
+      </div><!-- End Swim About -->
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-splash">
+          <div class="splash-img">
+            <img src="/media/locations.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="splash-info">
+            <h4>Levels</h4>
+            <span>Cardiff</span>
+            <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+          </div>
+        </div>
+      </div><!-- End Levels About -->
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+        <div class="about-splash">
+          <div class="splash-img">
+            <img src="/media/locations.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="splash-info">
+            <h4>Locations</h4>
+            <span>Fontygary</span>
+            <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+          </div>
+        </div>
+      </div><!-- End Location About -->
+
+
+    </div>
+
+  </div>
+</section>
+<!-- End About Splash Section -->
+</main>
 {% endblock %}
