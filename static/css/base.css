@@ -65,6 +65,13 @@ body {
   color: #85cfeb;
 }
 
+.dropdown-toggle::after {
+  color: #85cfeb;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #85cfeb;
+}
+
 .navbar-toggler {
   border-color: #85cfeb;
   border-width: 2px;
