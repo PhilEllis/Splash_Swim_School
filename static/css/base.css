@@ -299,7 +299,7 @@ Sections Header
 --------------------------------------------------------------*/
 .section-header h3 {
   font-size: 32px;
-  color: #111;
+  color: #020924;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -334,6 +334,7 @@ Sections Header
   padding-bottom: 30px;
   color: #333;
 }
+
 
 /*--------------------------------------------------------------
 # About Splash Section
@@ -419,4 +420,221 @@ Sections Header
 .about .about-splash:hover {
   transform: scale(1.08);
   box-shadow: 0px 0 30px rgba(55, 55, 63, 0.15);
+}
+
+/*--------------------------------------------------------------
+# Swim Levels
+--------------------------------------------------------------*/
+
+#levels {
+  background: #fff;
+  padding: 60px 0 0 0;
+  overflow: hidden;
+}
+
+#levels .levels-img {
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media (min-width: 769px) {
+  #levels .levels-img {
+    padding-top: 120px;
+    margin-top: -200px;
+  }
+}
+
+#levels .levels-img img {
+  max-width: 100%;
+}
+
+#levels .box {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#levels .icon {
+  margin-bottom: 10px;
+}
+
+#levels .icon i {
+  color: #85cfeb;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+#levels .icon i:before {
+  background: #85cfeb;
+  background: linear-gradient(45deg, #1dc8cd 0%, #85cfeb 100%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#levels .title {
+  font-weight: 300;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+#levels .title a {
+  color: #020924;
+}
+
+#levels .title a:hover {
+  color: #85cfeb;
+  font-size: 26px;
+
+}
+
+#levels .description {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+#levels .section-description {
+  padding-bottom: 10px;
+}
+
+#levels .levels-title {
+  color: #020924;
+}
+
+/*--------------------------------------------------------------
+# Swim Facts
+--------------------------------------------------------------*/
+
+#facts {
+  background: url("/media/iStock-1485454176.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 0 0;
+  position: relative;
+}
+
+#facts::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.88);
+  z-index: 9;
+}
+
+#facts .container {
+  position: relative;
+  z-index: 10;
+}
+
+#facts .counters span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  color: #85cfeb;
+}
+
+#facts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #111;
+}
+
+#facts .facts-img {
+  text-align: center;
+  padding-top: 30px;
+}
+
+/*--------------------------------------------------------------
+# Swim Team
+--------------------------------------------------------------*/
+
+#team {
+  background: #fff;
+  padding: 60px 0;
+}
+
+#team .member {
+  text-align: center;
+  margin-bottom: 20px;
+  background: #000;
+  position: relative;
+}
+
+#team .member .member-info {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+}
+
+#team .member .member-info-content {
+  margin-top: -50px;
+  transition: margin 0.2s;
+}
+
+#team .member:hover .member-info {
+  background: rgba(2, 9, 36, 0.6);
+  opacity: 1;
+  transition: 0.4s;
+}
+
+#team .member:hover .member-info-content {
+  margin-top: 0;
+  transition: margin 0.4s;
+}
+
+#team .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+#team .member .social {
+  margin-top: 15px;
+}
+
+#team .member .social a {
+  transition: none;
+  color: #fff;
+}
+
+#team .member .social a:hover {
+  color: #85cfeb;
+}
+
+#team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+
+#team .about-team .member:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: url(/media/team-shape.svg) no-repeat center bottom;
+  background-size: contain;
+  z-index: 1;
 }
