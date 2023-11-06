@@ -166,7 +166,7 @@ body {
   
   #hero .carousel-item::before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   
   #hero .carousel-container {
@@ -179,6 +179,7 @@ body {
     left: 50px;
     right: 50px;
   }
+
   
   #hero .container {
     text-align: center;
@@ -714,7 +715,7 @@ Sections Header
 }
 
 #footer .footer-top {
-  background: url("/media/footerswimdeepgradient.jpg") center no-repeat;
+  background: url("/media/footerswimoverlay.jpg") center no-repeat;
   padding: 60px 0 30px 0;
 }
 
@@ -843,4 +844,228 @@ Sections Header
   text-align: center;
   font-size: 13px;
   color: #ddd;
+}
+
+/*--------------------------------------------------------------
+  # Hero Levels
+  --------------------------------------------------------------*/
+  #hero .hero-level,
+  #hero .level-inner,
+  #hero .level-item,
+  #hero .level-item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  #hero .level-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #hero .level-item::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  #hero .level-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 70px;
+    left: 50px;
+    right: 50px;
+  }
+
+ /*--------------------------------------------------------------
+  # About Levels Section
+  --------------------------------------------------------------*/
+#about-levels {
+  background: #fff;
+  padding: 60px 0;
+}
+
+#about-levels .about-container .background {
+  margin: 20px 0;
+}
+
+#about-levels .about-container .content {
+  background: #fff;
+}
+
+#about-levels .about-container .title {
+  color: #020924;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#about-levels .about-container p {
+  line-height: 26px;
+}
+
+#about-levels .about-container p:last-child {
+  margin-bottom: 0;
+}
+
+#about-levels .about-container .icon-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+#about-levels .about-container .icon-box .icon {
+  float: left;
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #85cfeb;
+  transition: all 0.3s ease-in-out;
+}
+
+#about-levels .about-container .icon-box .icon i {
+  color: #85cfeb;
+  font-size: 38px;
+  line-height: 0;
+}
+
+#about-levels .about-container .icon-box:hover .icon {
+  background: #85cfeb;
+}
+
+#about-levels .about-container .icon-box:hover .icon i {
+  color: #fff;
+}
+
+#about-levels .about-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+#about-levels .about-container .icon-box .title a {
+  color: #283d50;
+}
+
+#about-levels .about-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#about-levels .about-extra {
+  padding-top: 60px;
+}
+
+#about-levels .about-extra h4{
+  color: #020924;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions Section
+--------------------------------------------------------------*/
+#faq {
+  background: url("/media/iStock-1485454176.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+  position: relative;
+}
+
+#faq::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9;
+}
+
+#faq .container {
+  position: relative;
+  z-index: 10;
+}
+
+.faq .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+  color: #020924;
+}
+
+.faq .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.faq .content p {
+  font-size: 15px;
+  color: #020924;
+}
+
+.faq .accordion-item {
+  border: 0;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+.faq .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .accordion-collapse {
+  border: 0;
+}
+
+.faq .accordion-button {
+  padding: 20px 50px 20px 20px;
+  font-weight: 600;
+  border: 0;
+  font-size: 18px;
+  line-height: 24px;
+  color: #020924;
+  text-align: left;
+  background: #fff;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.faq .accordion-button .num {
+  padding-right: 10px;
+  font-size: 20px;
+  line-height: 0;
+  color: #85cfeb;
+}
+
+.faq .accordion-button:not(.collapsed) {
+  color: #020924;
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.faq .accordion-button:after {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.faq .accordion-body {
+  padding: 0 40px 30px 45px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: none;
 }
