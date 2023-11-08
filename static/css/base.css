@@ -98,7 +98,7 @@ body {
 }
 
 .dropdown-menu {
-  background: rgba(2, 9, 36, 0.4);
+  background: rgba(2, 9, 36, 0.7);
 }
 
 .dropdown-menu a:hover {
@@ -279,7 +279,7 @@ body {
   }
   
   #hero .btn-get-started:hover {
-    background: #fff;
+    background: #020924;
     color: #85cfeb;
   }
   
@@ -429,7 +429,7 @@ Sections Header
 
 #levels {
   background: #fff;
-  padding: 60px 0 0 0;
+  padding: 60px 0 60px 0;
   overflow: hidden;
 }
 
@@ -480,6 +480,8 @@ Sections Header
 
 #levels .title a {
   color: #020924;
+  text-decoration: underline;
+  text-decoration-color: #85cfeb;
 }
 
 #levels .title a:hover {
@@ -500,6 +502,25 @@ Sections Header
 
 #levels .levels-title {
   color: #020924;
+}
+
+#levels .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+  background: #85cfeb;
+}
+
+#levels .btn-get-started:hover {
+  background: #020924;
+  color: #85cfeb;
 }
 
 /*--------------------------------------------------------------
