@@ -976,6 +976,25 @@ Sections Header
   font-size: 24px;
 }
 
+#about-levels .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  border-width: 0;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+  background: #85cfeb;
+}
+
+#about-levels .btn-get-started:hover {
+  background: #020924;
+  color: #85cfeb;
+}
 /*--------------------------------------------------------------
 # Frequently Asked Questions Section
 --------------------------------------------------------------*/
