@@ -54,18 +54,15 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link scrollto" href="#about">About</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-person-swimming fa-lg"></i> Levels
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Level 1</a></li>
-                <li><a class="dropdown-item" href="#">Level 2</a></li>
-                <li><a class="dropdown-item" href="#">Level 3</a></li>
-                <li><a class="dropdown-item" href="#">Level 4</a></li>
+                <li><a class="dropdown-item" href="{% url 'level1_courses' %}">Level 1</a></li>
+                <li><a class="dropdown-item" href="{% url 'level2_courses' %}">Level 2</a></li>
+                <li><a class="dropdown-item" href="{% url 'level3_courses' %}">Level 3</a></li>
+                <li><a class="dropdown-item" href="{% url 'level4_courses' %}">Level 4</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -104,76 +101,6 @@
       </div>
     </nav>
   </header>
-
-  
-
-    <!-- Header working with non styling a white space 
-    <header id="header" class="fixed-top ">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <h1 class="logo"><a class="navbar-brand" href="{% url 'home' %}">Splash</a></h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link scrollto" href="#about">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-person-swimming fa-lg"></i> Levels
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Level 1</a></li>
-                <li><a class="dropdown-item" href="#">Level 2</a></li>
-                <li><a class="dropdown-item" href="#">Level 3</a></li>
-                <li><a class="dropdown-item" href="#">Level 4</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here?</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-user"></i> Account
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="user-options">
-                {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Product Management</a>
-                    {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                {% endif %}
-              </ul>
-            </li>
-            <li class="nav-item">
-                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                    <div class="text-center">
-                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                        <p class="my-0">
-                            {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
-                            {% else %}
-                                $0.00
-                            {% endif %}
-                        </p>
-                    </div>
-                </a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- End Header -->
    
     {% if messages %}
         <div class="message-container"></div>
