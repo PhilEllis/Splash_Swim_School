@@ -93,7 +93,7 @@
           {% endfor %}
         </ul>
         <div class="dropdown">
-          <label for="location">Choose your Level 1 Swim Lesson Location:</label>
+          <label for="location" class="fw-bold mb-2">Choose your Level 1 Swim Lesson Location:</label>
           <select id="locationDropdown" class="form-control">
             <option value="">Select Location</option>
             {% for location in locations %}
@@ -101,7 +101,7 @@
             {% endfor %}
         </select>
       </div>
-      <button type="submit" class="btn-get-started mt-2">Book Now</button>
+      <button type="submit" class="btn-get-started mt-3" id="bookNowButton" disabled>Book Now</button>
       </div>
       </div>
     </div>
