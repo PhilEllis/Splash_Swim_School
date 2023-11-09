@@ -6,6 +6,7 @@ from locations.models import Location
 def level1_courses(request):
     """ A view to display level 1 swim lesson courses """
     level1_courses = Course.objects.filter(level='Level 1')
+    locations = Location.objects.all()
     context = {
         'courses': level1_courses,
         'locations': locations,
@@ -15,6 +16,7 @@ def level1_courses(request):
 def level2_courses(request):
     """ A view to display level 2 swim lesson courses """
     level2_courses = Course.objects.filter(level='Level 2')
+    locations = Location.objects.all()
     context = {
         'courses': level2_courses,
         'locations': locations,
@@ -25,6 +27,7 @@ def level2_courses(request):
 def level3_courses(request):
     """ A view to display level 3 swim lesson courses """
     level3_courses = Course.objects.filter(level='Level 3')
+    locations = Location.objects.all()
     context = {
         'courses': level3_courses,
         'locations': locations,
@@ -35,6 +38,7 @@ def level3_courses(request):
 def level4_courses(request):
     """ A view to display level 4 swim lesson courses """
     level4_courses = Course.objects.filter(level='Level 4')
+    locations = Location.objects.all()
     context = {
         'courses': level4_courses,
         'locations': locations,
