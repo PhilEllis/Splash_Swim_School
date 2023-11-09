@@ -257,7 +257,7 @@ body {
     border-radius: 50px;
     transition: 0.5s;
     margin: 10px;
-    color: #fff;
+    color: #020924;
     background: #85cfeb;
   }
   
@@ -485,7 +485,7 @@ Sections Header
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  color: #fff;
+  color: #020924;
   background: #85cfeb;
 }
 
@@ -975,7 +975,7 @@ Sections Header
   border-width: 0;
   transition: 0.5s;
   margin: 10px;
-  color: #fff;
+  color: #020924;
   background: #85cfeb;
 }
 
@@ -1080,3 +1080,39 @@ Sections Header
   background: #fff;
   box-shadow: none;
 }
+
+/*--------------------------------------------------------------
+  # Hero Bag
+  --------------------------------------------------------------*/
+  #hero .hero-bag,
+  #hero .bag-inner,
+  #hero .bag-item,
+  #hero .bag-item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  #hero .bag-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #hero .bag-item::before {
+    content: "";
+    background-color: rgba(2, 9, 36, 0.8);
+  }
+
+  #hero .bag-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 70px;
+    left: 50px;
+    right: 50px;
+  }
