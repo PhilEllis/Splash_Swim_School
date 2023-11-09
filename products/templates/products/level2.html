@@ -21,7 +21,7 @@
               <div class="container">
                 <h2 class="animate__animated animate__fadeInDown">Level 2</h2>
                 <p class="animate__animated animate__fadeInUp">Frog level is where all of the excitement begins. This is the very start of your child’s aquatic journey. With our passionate and experienced instructors, state-of-the-art facilities, and a commitment to safety, your child will receive top-quality swim education meaning they will be progressing to Level 2 Frogs in no time.</p>
-                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Book Now</a>
+                <a href="#scroll-to-levels" class="btn-get-started scrollto animate__animated animate__fadeInUp">Book Now</a>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
       <div class="col-lg-6" data-aos="fade-right">
         <img src="/media/splashcharacterlevel.png" class="img-fluid" alt="">
       </div>
-      <div class="col-lg-6 pt-5 pt-lg-0" data-aos="fade-left">
+      <div class="col-lg-6 pt-5 pt-lg-0" data-aos="fade-left" id="scroll-to-levels">
         <h4>Read the requirements and think that Frog is the perfect level for your child?</h4>
         <p>
           If so that is great you are two steps away from starting your child’s aquatic journey. All you need to do is select the class location that suits you best and to click the Book Now button below.
@@ -83,6 +83,25 @@
         <p>
           You will then be taken through the purchase steps, invited to set up an account and complete your child’s profile. Only once your child’s profile is complete will their enrolment in the class be confirmed. Failure to complete your child’s profile will result in your child being removed from the class list and potentially loosing their slot. So don’t wait book now and we look forward to welcoming your child into splash swim school!
         </p>
+        <!-- Loop through and display course details -->
+        <ul>
+          {% for course in courses %}
+            <li>
+              {{ course.name }} - {{ course.description }} - {{ course.price }}
+              <!-- Add more course details as needed -->
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="dropdown">
+          <label for="location" class="fw-bold mb-2">Choose your Level 2 Swim Lesson Location:</label>
+          <select id="locationDropdown" class="form-control">
+            <option value="">Select Location</option>
+            {% for location in locations %}
+                <option value="{{ location.id }}">{{ location.name }}</option>
+            {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn-get-started mt-3" id="bookNowButton" disabled>Book Now</button>
       </div>
     </div>
   </div>
