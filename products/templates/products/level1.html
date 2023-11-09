@@ -83,6 +83,28 @@
         <p>
           You will then be taken through the purchase steps, invited to set up an account and complete your child’s profile. Only once your child’s profile is complete will their enrolment in the class be confirmed. Failure to complete your child’s profile will result in your child being removed from the class list and potentially loosing their slot. So don’t wait book now and we look forward to welcoming your child into splash swim school!
         </p>
+        <!-- Loop through and display course details -->
+        <ul>
+          {% for course in courses %}
+            <li>
+              {{ course.name }} - {{ course.description }} - {{ course.price }}
+              <!-- Add more course details as needed -->
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+        <div class="dropdown">
+          <label for="location">Choose your Level 1 Swim Lesson Location:</label>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="locationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Location
+          </button>
+          <div class="dropdown-menu" aria-labelledby="locationDropdown">
+              <a class="dropdown-item" href="#" data-value="location1">Location 1</a>
+              <a class="dropdown-item" href="#" data-value="location2">Location 2</a>
+              <a class="dropdown-item" href="#" data-value="location2">Location 3</a>
+          </div>
+      </div>
+      <button type="submit" class="btn-get-started mt-2">Book Now</button>
       </div>
     </div>
   </div>
