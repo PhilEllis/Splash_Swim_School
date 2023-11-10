@@ -134,10 +134,10 @@ body {
     }
   }
   
-  #hero .carousel,
-  #hero .carousel-inner,
-  #hero .carousel-item,
-  #hero .carousel-item::before {
+  #hero .hero,
+  #hero .hero-inner,
+  #hero .hero-item,
+  #hero .hero-item::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -145,18 +145,18 @@ body {
     bottom: 0;
   }
   
-  #hero .carousel-item {
+  #hero .hero-item {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   
-  #hero .carousel-item::before {
+  #hero .hero-item::before {
     content: "";
     background-color: rgba(0, 0, 0, 0.3);
   }
   
-  #hero .carousel-container {
+  #hero .swim-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,60 +195,6 @@ body {
     #hero p {
       width: 60%;
     }
-  }
-  
-  #hero .carousel-fade {
-    overflow: hidden;
-  }
-  
-  #hero .carousel-fade .carousel-inner .carousel-item {
-    transition-property: opacity;
-  }
-  
-  #hero .carousel-fade .carousel-inner .carousel-item,
-  #hero .carousel-fade .carousel-inner .active.carousel-item-start,
-  #hero .carousel-fade .carousel-inner .active.carousel-item-end {
-    opacity: 0;
-  }
-  
-  #hero .carousel-fade .carousel-inner .active,
-  #hero .carousel-fade .carousel-inner .carousel-item-next.carousel-item-start,
-  #hero .carousel-fade .carousel-inner .carousel-item-prev.carousel-item-end {
-    opacity: 1;
-    transition: 0.5s;
-  }
-  
-  #hero .carousel-fade .carousel-inner .carousel-item-next,
-  #hero .carousel-fade .carousel-inner .carousel-item-prev,
-  #hero .carousel-fade .carousel-inner .active.carousel-item-start,
-  #hero .carousel-fade .carousel-inner .active.carousel-item-end {
-    left: 0;
-    transform: translate3d(0, 0, 0);
-  }
-  
-  #hero .carousel-control-prev,
-  #hero .carousel-control-next {
-    width: 10%;
-  }
-  
-  @media (min-width: 1024px) {
-  
-    #hero .carousel-control-prev,
-    #hero .carousel-control-next {
-      width: 5%;
-    }
-  }
-  
-  #hero .carousel-control-next-icon,
-  #hero .carousel-control-prev-icon {
-    background: none;
-    font-size: 32px;
-    line-height: 1;
-  }
-  
-  #hero .carousel-indicators li {
-    cursor: pointer;
-    list-style-type: none;
   }
   
   #hero .btn-get-started {
