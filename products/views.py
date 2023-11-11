@@ -6,7 +6,7 @@ from locations.models import Location
 def level1_courses(request):
     """ A view to display level 1 swim lesson courses """
     level1_courses = Course.objects.filter(level='Level 1')
-    locations = Location.objects.all()
+    locations = Location.objects.all()  
     context = {
         'courses': level1_courses,
         'locations': locations,
