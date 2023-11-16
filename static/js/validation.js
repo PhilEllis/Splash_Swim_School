@@ -20,3 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Select a location before booking.");
         }
     });
+});
