@@ -8,25 +8,17 @@ def view_bag(request):
 
     return render(request, 'bag/bag.html')
 
-def add_course_to_bag(request, course_id):
+def add_course_to_bag(request):
     """ Add a swimming course to the shopping bag """
     course_id = request.POST.get('course_id')
     course = get_object_or_404(Course, pk=course_id)
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if course_id in bag:
-        bag[course_id]['quantity'] += 1
+    if course_id in list(bag.keys()):
+        bag[course_id] = 1
     else:
-        bag[course_id] = {
-            'description': course.description,
-            'name': course.name,
-            #'price': course.price,
-            #'start_date': course.start_date,
-            #'end_date': course.end_date,
-            'location': course.location.name,
-            'quantity': 1,
-        }
+        bag[course_id] = 1
 
     request.session['bag'] = bag
     print(request.session['bag'])

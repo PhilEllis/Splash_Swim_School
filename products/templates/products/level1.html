@@ -85,7 +85,7 @@
         </p>
         <!-- if statement course details -->
         <!-- Loop through courses and display course-specific details -->
-        <form class="form" action="{% url 'add_course_to_bag' 0 %}" method="POST">
+        <form class="form" action="{% url 'add_course_to_bag' %}" method="POST">
           {% csrf_token %}
           <ul class="ps-0">
               {% for course in courses %}
