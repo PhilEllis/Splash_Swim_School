@@ -87,11 +87,11 @@
         <!-- Loop through courses and display course-specific details -->
         <form class="form" action="{% url 'add_course_to_bag' 0 %}" method="POST">
           {% csrf_token %}
-          <ul>
+          <ul class="ps-0">
               {% for course in courses %}
               <ul>
-                  <input type="radio" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
-                  <label for="course_{{ course.id }}">{{ course.name }}</label><br>
+                  <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
+                  <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
                   Start Date: {{ course.start_date }}<br>
                   End Date: {{ course.end_date }}<br>
                   Price: £{{ course.price }}

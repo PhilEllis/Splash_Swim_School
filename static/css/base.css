@@ -933,6 +933,35 @@ Sections Header
   background: #020924;
   color: #85cfeb;
 }
+
+/*--------------------------------------------------------------
+# Levels Course Selection
+--------------------------------------------------------------*/
+ 
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #f2f2f2;
+    border: 2px solid #d1d1d1;
+  }
+  
+  input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #85cfeb;
+    border-radius: 50%;
+  }
+
 /*--------------------------------------------------------------
 # Frequently Asked Questions Section
 --------------------------------------------------------------*/
