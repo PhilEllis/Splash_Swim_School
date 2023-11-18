@@ -1114,6 +1114,10 @@ Sections Header
   color: rgba(2, 9, 36, 1);
 }
 
+#hero .empty {
+  color: white !important;
+}
+
 .hero-bag .btn-get-started {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
