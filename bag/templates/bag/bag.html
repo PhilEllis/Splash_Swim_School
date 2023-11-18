@@ -68,10 +68,19 @@
                                             <td class="py-3">
                                                 <p class="my-0">{{ item.product.price }}</p>
                                             </td>
+                                            <td class="py-3">
+                                                <form action="{% url 'remove_course_from_bag' item.course_id %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr> 
                                     {% endfor %}
                                     <tr>
                                         <td colspan="8" class="pt-5 text-right">
+                                            <p>Please note: Only one course can be booked at a time. For multiple children, complete this booking first, then repeat the process for each additional course.</p>
                                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                         </td>

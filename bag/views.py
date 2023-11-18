@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect, reverse, HttpResponse, get_object_or_404
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from products.models import Course
 
@@ -24,3 +25,18 @@ def add_course_to_bag(request):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+@require_POST
+def remove_course_from_bag(request, course_id):
+    """ Remove a course from the shopping bag """
+
+    bag = request.session.get('bag', {})
+
+    if course_id in bag:
+        del bag[course_id]
+        messages.info(request, 'Removed course from your bag.')
+    else:
+        messages.error(request, "That course isn't in your bag.")
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
