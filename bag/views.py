@@ -15,12 +15,12 @@ def add_course_to_bag(request):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if course_id in list(bag.keys()):
-        bag[course_id] = 1
+    # Check if the course is already in the bag
+    if course_id in bag:
+        messages.info(request, f'{course.name} is already in your bag.')
     else:
+        bag.clear()  # Clear the bag to ensure only one course is present
         bag[course_id] = 1
 
     request.session['bag'] = bag
-    print(request.session['bag'])
-    print(course_id)
     return redirect(redirect_url)
