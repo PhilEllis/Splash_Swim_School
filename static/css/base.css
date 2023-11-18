@@ -1095,3 +1095,41 @@ Sections Header
     left: 50px;
     right: 50px;
   }
+
+  /*--------------------------------------------------------------
+  # Bag Table
+  --------------------------------------------------------------*/
+
+.bag-table {
+  --bs-table-bg: transparent !important; 
+  background-color: rgb(255, 255, 255, 0.7);
+  color: rgba(2, 9, 36, 1);
+}
+
+.bag-table thead th {
+  color: rgba(2, 9, 36, 1);
+}
+
+#hero .hero-bag p {
+  color: rgba(2, 9, 36, 1);
+}
+
+.hero-bag .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  border-width: 0;
+  transition: 0.5s;
+  margin: 10px;
+  color: #020924;
+  background: #85cfeb;
+}
+
+.hero-bag .btn-get-started:hover {
+  background: #020924;
+  color: #85cfeb;
+}
