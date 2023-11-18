@@ -18,11 +18,15 @@ def bag_contents(request):
             # Assuming the bag contains only one item with its course_id and quantity
             course_id, quantity = list(bag.items())[0]
 
-            product = get_object_or_404(Course, pk=course_id)
-            total = product.price * quantity  # Calculate total
+            course = get_object_or_404(Course, pk=course_id)
+            total = course.price * quantity  # Calculate total
 
             bag_items.append({
                 'course_id': course_id,
+                'name': course.name,
+                'level': course.get_level_display(),
+                'start_date': course.start_date,
+                'location_name': course.location.name,
                 'quantity': quantity,
                 'product': product,
             })
