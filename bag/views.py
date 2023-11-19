@@ -17,12 +17,22 @@ def add_course_to_bag(request):
     bag = request.session.get('bag', {})
 
     # Check if the course is already in the bag
+    # Check if the course is already in the bag
     if course_id in bag:
         messages.info(request, f'{course.name} is already in your bag.')
     else:
-        bag.clear()  # Clear the bag to ensure only one course is present
-        bag[course_id] = 1
-        messages.success(request, f'{course.name} has been added to your bag, one course to be purchased at a time.')
+        if bag:
+            # If there is a different course in the bag, inform about swapping
+            existing_course_id = next(iter(bag))
+            if existing_course_id != course_id:
+                existing_course = Course.objects.get(pk=existing_course_id)
+                messages.info(request, f'Replacing {existing_course.name} with {course.name} in your bag.')
+            bag.clear()
+            bag[course_id] = 1
+        else:
+            # If the bag is empty, just add the course and show success message
+            bag[course_id] = 1
+            messages.success(request, f'{course.name} has been added to your bag, one course to be purchased at a time.')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
