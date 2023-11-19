@@ -22,6 +22,7 @@ def add_course_to_bag(request):
     else:
         bag.clear()  # Clear the bag to ensure only one course is present
         bag[course_id] = 1
+        messages.success(request, f'{course.name} has been added to your bag, one course to be purchased at a time.')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -34,7 +35,7 @@ def remove_course_from_bag(request, course_id):
 
     if course_id in bag:
         del bag[course_id]
-        messages.info(request, 'Removed course from your bag.')
+        messages.info(request, 'Course removed from your bag.')
     else:
         messages.error(request, "That course isn't in your bag.")
 
