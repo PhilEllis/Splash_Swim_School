@@ -2,7 +2,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     var toastElList = [].slice.call(document.querySelectorAll('.toast'));
     var toastList = toastElList.map(function (toastEl) {
-      return new bootstrap.Toast(toastEl);
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+        return toast;
     });
-    toastList.forEach(toast => toast.show());
-  });
+
+    // Automatically hide the toast after 5s
+    toastList.forEach(function(toast) {
+        setTimeout(function() {
+            toast.hide();
+        }, 5000);
+    });
+});
