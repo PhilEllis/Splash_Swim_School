@@ -1086,10 +1086,24 @@ Sections Header
 /*--------------------------------------------------------------
   # Hero Bag
   --------------------------------------------------------------*/
-  #hero .hero-bag,
-  #hero .bag-inner,
-  #hero .bag-item,
-  #hero .bag-item::before {
+  #bag-hero {
+    width: 100%;
+    min-height: 125vh;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  @media (max-height: 500px) {
+    #bag-hero {
+      height: 150vh;
+    }
+  }
+  
+  #bag-hero .hero-bag,
+  #bag-hero .bag-inner,
+  #bag-hero .bag-item,
+  #bag-hero .bag-item::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -1097,24 +1111,24 @@ Sections Header
     bottom: 0;
   }
   
-  #hero .bag-item {
+  #bag-hero .bag-item {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   
-  #hero .bag-item::before {
+  #bag-hero .bag-item::before {
     content: "";
     background-color: rgba(2, 9, 36, 0.8);
   }
 
-  #hero .bag-number {
+  #bag-hero .bag-number {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 0;
-    top: 70px;
+    bottom: 20px;
+    top: 20px;
     left: 50px;
     right: 50px;
   }
@@ -1133,11 +1147,11 @@ Sections Header
   color: rgba(2, 9, 36, 1);
 }
 
-#hero .hero-bag p {
+#bag-hero .hero-bag p {
   color: rgba(2, 9, 36, 1);
 }
 
-#hero .empty {
+#bag-hero .empty {
   color: white !important;
 }
 
@@ -1159,4 +1173,66 @@ Sections Header
 .hero-bag .btn-get-started:hover {
   background: #020924;
   color: #85cfeb;
+}
+
+/*--------------------------------------------------------------
+# Checkout Hero
+--------------------------------------------------------------*/
+
+#check-hero {
+  width: 100%;
+  min-height: 150vh;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-height: 500px) {
+  #bag-hero {
+    height: 150vh;
+  }
+}
+
+#check-hero .hero-bag,
+#check-hero .bag-inner,
+#check-hero .bag-item,
+#check-hero .bag-item::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#check-hero .bag-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#check-hero .bag-item::before {
+  content: "";
+  background-color: rgba(2, 9, 36, 0.8);
+}
+
+#check-hero .bag-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  top: 20px;
+  left: 50px;
+  right: 50px;
+}
+
+.check-form {
+  --bs-table-bg: transparent !important; 
+  background-color: rgb(255, 255, 255, 0.7);
+  color: rgba(2, 9, 36, 1);
+  border-radius: 0.5%;
+}
+
+.check-form p {
+  color: rgba(2, 9, 36, 1);
 }
