@@ -11,7 +11,8 @@ class OrderLineItemAdminInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
 
-    readonly_fields = ('order_number', 'date', 'order_total', 'grand_total', 'get_course_names')
+    readonly_fields = ('order_number', 'date', 'order_total', 'grand_total', 'get_course_names', 'original_bag',
+                       'stripe_pid')
 
     def get_course_names(self, obj):
         return ", ".join([line_item.course.name for line_item in obj.lineitems.all()])
@@ -20,7 +21,8 @@ class OrderAdmin(admin.ModelAdmin):
     fields = ('order_number', 'date', 'full_name', 'email', 'phone_number', 
               'country', 'postcode', 'town_or_city', 
               'street_address1', 'street_address2', 'county', 
-              'order_total', 'grand_total', 'get_course_names')
+              'order_total', 'grand_total', 'get_course_names', 
+              'original_bag', 'stripe_pid')
 
     list_display = ('order_number', 'date', 'full_name', 
                     'order_total', 'grand_total', 'get_course_names')
