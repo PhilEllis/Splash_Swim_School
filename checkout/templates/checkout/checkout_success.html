@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Hero Levels Section adapted from HeroBiz Template BootstrapMade.com ======= -->
+<section id="check-hero">
+  <div class="hero-container container">
+    <div class="hero-bag">
+      <div class="bag-inner" role="listbox">
+        <div class="bag-item active" style="background-image: url(/media/1.jpg)">
+          <div class="bag-number">
+            <div class="container mb-2">
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                        <h2 class="logo-font mb-4 text-center text-white">Thank You</h2>
+                        <hr>
+                        <p class="text-white text-center">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                    </div>
+                </div>
+        
+                <div class="row check-form">
+                    <div class="col-12 col-lg-7"></div>
+        </div>
+        <div class="row">
+			<div class="col-12 col-lg-7 text-center">
+				<a href="{% url 'home' %}" class="btn text-center">
+					<span class="icon" style="color: white;">
+						<i class="fa-solid fa-person-swimming"></i>
+					</span>
+					<span class="text-uppercase text-white">Find out more about us</span>
+				</a>
+			</div>
+		</div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+  <!-- End Hero Section -->
+  <main>
+</main>
+{% endblock %}
