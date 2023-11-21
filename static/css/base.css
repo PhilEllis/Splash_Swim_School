@@ -1183,7 +1183,7 @@ Sections Header
   width: 100%;
   min-height: 170vh;
   background: #000;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -1277,4 +1277,18 @@ Sections Header
 #card-element {
     color: #000;
     border: 1px solid #000;
+}
+
+/*--------------------------------------------------------------
+# Stripe
+--------------------------------------------------------------*/
+
+#check-hero .check-success {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  top: 80px;
+  left: 50px;
+  right: 50px;
 }
