@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Order, OrderLineItem
 from products.models import Course
 
+import stripe
 import json
 import time
 
