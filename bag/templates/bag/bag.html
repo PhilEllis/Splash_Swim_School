@@ -3,9 +3,9 @@
 
 {% block page_header %}
     <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+      <div class="row">
+        <div class="col"></div>
+      </div>
     </div>
 
 {% endblock %}
@@ -20,61 +20,59 @@
         <div class="bag-item active" style="background-image: url(/media/1.jpg)">
           <div class="bag-number">
             <div class="container mb-2 mt-2">
-                <div class="row">
-                    <div class="col">
-                        <hr>
-                        <h2 class="logo-font mb-4 text-center text-white">Shopping Bag</h2>
-                        <hr>
-                    </div>
+              <div class="row">
+                <div class="col">
+                  <hr>
+                  <h2 class="logo-font mb-4 text-center text-white">Shopping Bag</h2>
+                  <hr>
                 </div>
-        
-                <div class="row text-center">
-                    <div class="col">
+            </div>
+            <div class="row text-center">
+                <div class="col">
                         {% if bag_items %}
                             <div class="table-responsive rounded">
-                                <table class="table table-sm table-borderless bag-table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Course ID</th>
-                                            <th scope="col">Course Name</th>
-                                            <th scope="col">Swim Level</th>
-                                            <th scope="col">Start Date</th>
-                                            <th scope="col">Location</th>
-                                            <th scope="col">Qty</th>
-                                            <th scope="col">Price</th>
-                                        </tr>
-                                    </thead>
-
+                              <table class="table table-sm table-borderless bag-table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Course ID</th>
+                                    <th scope="col">Course Name</th>
+                                    <th scope="col">Swim Level</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Price</th>
+                                  </tr>
+                                </thead>
                                     {% for item in bag_items %}
                                         <tr>
+                                          <td class="py-3">
+                                            <p class="my-0"><strong>{{ item.course_id }}</strong></p>
+                                          </td>
+                                          <td class="py-3">
+                                            <p class="my-0">{{ item.name }}</p>
+                                          </td>
+                                          <td class="py-3">
+                                            <p class="my-0">{{ item.level }}</p>
+                                          </td>
+                                          <td class="py-3">
+                                            <p class="my-0">{{ item.start_date }}</p>
+                                          </td>
+                                          <td class="py-3">
+                                            <p class="my-0">{{ item.location_name }}</p>
+                                          </td>
+                                          <td class="py-3 w-25">
+                                            <p class="my-0">{{ item.quantity }}</p>
+                                          </td>
+                                          <td class="py-3">
+                                            <p class="my-0">{{ item.product.price }}</p>
+                                          </td>
                                             <td class="py-3">
-                                                <p class="my-0"><strong>{{ item.course_id }}</strong></p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{ item.name }}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{ item.level }}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{ item.start_date }}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{ item.location_name }}</p>
-                                            </td>
-                                            <td class="py-3 w-25">
-                                                <p class="my-0">{{ item.quantity }}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <p class="my-0">{{ item.product.price }}</p>
-                                            </td>
-                                            <td class="py-3">
-                                                <form action="{% url 'remove_course_from_bag' item.course_id %}" method="POST">
-                                                    {% csrf_token %}
+                                              <form action="{% url 'remove_course_from_bag' item.course_id %}" method="POST">
+                                                  {% csrf_token %}
                                                     <button type="submit" class="btn btn-danger btn-sm">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
-                                                </form>
+                                               </form>
                                             </td>
                                         </tr> 
                                     {% endfor %}
@@ -87,30 +85,30 @@
                                     </tr>
                                     <!-- === Checkout and Continue Shopping buttons === -->
                                     <tr>
-                                        <td colspan="7" class="">
-                                            <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                                <span class="icon">
-                                                    <i class="fas fa-chevron-left"></i>
-                                                </span>
-                                                <span class="text-uppercase">Keep Shopping</span>
-                                            </a>
-                                            <a href="{% url 'checkout' %}" class="btn-get-started mt-3">
-                                                <span class="text-uppercase">Secure Checkout</span>
-                                                <span class="icon">
-                                                    <i class="fas fa-lock"></i>
-                                                </span>
-                                            </a>
-                                        </td>
+                                      <td colspan="7" class="">
+                                        <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                          <span class="icon">
+                                          <i class="fas fa-chevron-left"></i>
+                                          </span>
+                                          <span class="text-uppercase">Keep Shopping</span>
+                                          </a>
+                                          <a href="{% url 'checkout' %}" class="btn-get-started mt-3">
+                                          <span class="text-uppercase">Secure Checkout</span>
+                                          <span class="icon">
+                                          <i class="fas fa-lock"></i>
+                                          </span>
+                                        </a>
+                                      </td>
                                     </tr>
                                 </table>
                             </div>
                         {% else %}
                             <p class="lead mb-5 empty">Your bag is empty.</p>
                             <a href="{% url 'home' %}" class="btn-get-started">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
+                              <span class="icon">
+                              <i class="fas fa-chevron-left"></i>
+                              </span>
+                              <span class="text-uppercase">Keep Shopping</span>
                             </a>
                         {% endif %}
                     </div>
@@ -118,11 +116,11 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
-</div>
 </section>
   <!-- End Hero Section -->
-  <main>
+<main>
 </main>
 {% endblock %}
