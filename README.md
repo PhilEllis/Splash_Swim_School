@@ -3,11 +3,11 @@
 <h1 align="center"><img src="documents/AnamcaraPreview.png"/></h1>
 
 
-<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="documents/anamcaral.png" width="30px" /></a> Live website
+<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="media/favicon.png" width="30px" /></a> Live website
 
-<a href="https://github.com/PhilEllis/AnamCara-milestone-3/tree/main"><img src="documents/githublogo.png" width="30px" /></a> GitHub Repository
+<a href="https://github.com/PhilEllis/AnamCara-milestone-3/tree/main"><img src="media/githublogo.png" width="30px" /></a> GitHub Repository
 
-<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="documents/herokulogo.png" width="30px" /></a> Heroku Repository
+<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="media/herokulogo.png" width="30px" /></a> Heroku Repository
 
 # Welcome to Splash Swim School!
 
@@ -90,8 +90,61 @@ These business needs are not only aimed at improving the operational efficiency 
 
     ## Splash Swim School Future Iterations. 
 
-- 
-- 
+
+## Design Choices
+
+>### Structure Considerations
+- #### Schema
+    - Below is the reference table for the database schema that i originally created. Involving the parent profile who is able to create their child's profile along with the enrolment model that will communicate to the course model. 
+
+        <img src="media/initaldatabase.png" />
+
+    - This is a rough representation of the evolved schema that now includes
+
+        <img src="media/initaldatabase.png" />
+
+
+- #### Wireframes
+    - After roughly sketching an idea of the rough structure and deciding that i wanted to keep the page format simple. I used Figma to really help simulate and hone in the simple structure. The wireframe process allowed me to create the main hero and see how i could re-use that in a seamless manner across the main pages giving brand continuity as well as marking individual components of the site. I used the Figma wireframe to identify the areas that required imagery and to ascertain what imagery worked well together. 
+
+         <img src="media/splashfigmawireframe.png" height="600px" />
+
+>### Aesthetic Considerations
+
+- #### Colour scheme
+    -  The colour scheme is inspired by the original logo which displays a navy colour alongside a light blue colour. I focused on these two colours opting for a darker navy to create more contrast on the site and improve readability in areas. The additional colours throughout the rest of the site are set to compliment these two key colours. Keeping the colour pallet quite simple was key in being able to use many colourful images within the design. The bright colours in the images stand out and pop with vibrancy and fun whilst the key colours and plain palette create a consistent and calm background meaning the design doesn't look too busy.
+
+
+        <img src="media/splashlogo.png" height="50px" />
+        <img src="media/coolers.png" height="50px" />
+
+
+
+- #### Typography
+    - Whilst considering typography for the site i deemed it necessary to keep the chosen fonts simple and clear with a slightly softer element to them in line with a site selling services for children. Montserrat felt like a good bold yet soft option for the logo and all headers using the complimentary Open Sans for the body font. The aim with these font choices was to achieve clear, accessible and fun text.
+
+    - Montserrat
+       
+        <img src="media/Splashlogofont.png" height="30px" />
+
+
+    - Open Sans
+
+
+        <img src="media/subfont.png" height="30px" />
+
+
+
+- #### Imagery
+    - The use of imagery started with the business providing some images taken from their lessons. The boy squirting water with a smile on his face just summed up the joyful experience that these lessons can provide to children. From this i then opted for stock imagery (all credited in full below) that created a cohesive swimming pool look. The addition of the characters cut out and placed on top of the water provides that child friendly element without being too childish. This was an important fact for me to consider especially due to the fact that parents will be booking. When selecting imagery, including the vector images that tie in with the character levels i was very deliberate to try and capture imagery that represented gender equally, unfortunately i did not feel that the ethnic representation was balanced enough from the available imagery
+
+>### Structure & Aesthetics Considered
+
+- #### Mockups
+    - Considering the initial database schema and the initial wireframe to indicate where the imagery should go the following more details mockups were created to ensure that the layout worked and to judge the text areas available for copy creation. 
+
+        <img src="media/homemockup.png" height="600px" />
+        <img src="media/levelmockup.png" height="500px" />
 
 
 
@@ -106,25 +159,16 @@ These business needs are not only aimed at improving the operational efficiency 
 - [JavaScript](https://www.javascript.com/)
 - jQuery 
 - Python - Providing the main backend development for this application.
-   - blinker==1.6.2
-   - click==8.1.4
-   - dnspython==2.4.0
-   - dominate==2.8.0
-   - email-validator==2.0.0.post2
-   - Flask==2.3.2
-   - Flask-Bootstrap==3.3.7.1
-   - Flask-Login==0.6.2
-   - Flask-SQLAlchemy==2.5.1
-   - Flask-WTF==1.1.1
-   - greenlet==2.0.2
-   - h11==0.14.0
-   - httpcore==0.17.3
-   - itsdangerous==2.1.2
-   - psycopg2==2.9.6
-   - SQLAlchemy==1.4.46
-   - visitor==0.1.3
-   - Werkzeug==2.3.6. 
-   - WTForms==3.0.1
+   - asgiref==3.7.2
+   - Django==3.2
+   - django-allauth==0.41.0
+   - django-crispy-forms==1.14.0
+   - oauthlib==3.2.2
+   - python3-openid==3.2.0
+   - pytz==2023.3.post1
+   - requests-oauthlib==1.3.1
+   - sqlparse==0.4.4
+
 
 >### Frameworks, Libraries, Programs, Online Resources Used
 
@@ -251,11 +295,17 @@ If you wish to clone or download this repository to your local device you can fo
 
 >### Code 
 
-- The majority of the html code originated from the Bootstrap library and was styled with custom css.
-- The core of the application has been derived from the code Institute Relational Database Walkthrough and amended to fit the needs of my application. This includes the add_note, edit_note & delete_note functions The base of the code was taken from the walkthrough and edited to fit the functionality of this app. I have referenced it here instead of the routes.py as i belived it to be too messy and disturb the code on the .py file.
-- [prettyprinted](https://www.youtube.com/watch?v=8aTnmsDMldY&list=PLXmMXHVSvS-CoYS177-UvMAQYRfL3fBtX&index=72) The user authentication code has been modeled from this video and adapted suit the needs of this project. I found it hard to detail which changes came from this video without disrupting the flow of the code so have referenced it here instead. The Login, logout and sign up functions and use of WTForms has been based on this walkthrough and edited to suit the needs of this app. I did view all of his Flask videos and found it helped with understanding how flask-login worked alongside the other libraries.
-- [Bootstrapmade](https://bootstrapmade.com/) - I utilised a portion of html & css from the GP & Green templates for the lists section on the home page and the section titles on the home page and about page.
-- The modal has been taken from bootstrap and the javascript used to initiate it has been taken from a youtube video which i have now lost the link to but i wanted to make it clear it was not my own code.
+- The core of the application has been derived from the code Institute Relational Database Walkthrough Boutique Ado and amended to fit the needs of my application. I tried to make a strong distinction within the structure of the site to clearly mark the difference and try to challenge myself to adapt the walkthrough. The areas that are less distinguished are that of the Checkout app, Stripe and User Porfile. 
+- [Bootstrapmade](https://bootstrapmade.com/) - used as an alternative to the Bootstrap Library to form the base HTML & CSS for structure of the site. The following sections were taken for the following templates, stripped and edited with custom CSS and additional HTML to sit in line with the site design and layout.
+	- Bizpage Template- Hero CSS - Contact Us - Footer
+	- Newbiz Template- Level1-4 Main content structure
+	- Yumy Template- Who we are svg and Team SVG Wave
+-  I have used the the following resources to help me structure and formulate my approach to filtering the available products to the set levels. Please note that my code was inspired by not copied from. 
+		- [# Elevate Your Django Filtering](https://python.plainenglish.io/elevate-your-django-filtering-game-crafting-expert-level-filtersets-30f4dac7d9a6)
+		- [# Django Ecommerce Part 5 | Fetch products by category in django](https://www.youtube.com/watch?v=Bs_FtLv38Fw)
+		-  [# Django Rest Framework](https://www.django-rest-framework.org/api-guide/filtering/)
+- Styling of Radio Input taken from the basis provided within https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons
+- JS to activate the messages via toast is my custom js. all the rest of the JS code is that from the walkthrough.
 - All of the rest of the code was written by the author - Philippa Ellis
 
 
