@@ -1,1 +1,0 @@
-web: gunicorn splash_swim_school.wsgi:application
