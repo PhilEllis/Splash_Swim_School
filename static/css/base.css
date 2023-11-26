@@ -1244,10 +1244,10 @@ Sections Header
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
-  height: 40px;
+  height: 45px;
   padding: 10px 12px;
   border: 1px solid transparent;
-  border-radius: 0px;
+  border-radius: 5px;
   background-color: white;
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
@@ -1277,6 +1277,36 @@ Sections Header
 #card-element {
     color: #000;
     border: 1px solid #000;
+}
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
+#submit-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  border-width: 0;
+  transition: 0.5s;
+  margin: 10px;
+  color: #020924;
+  background: #85cfeb;
+}
+
+#submit-button:hover {
+  background: #020924;
+  color: #85cfeb;
 }
 
 /*--------------------------------------------------------------
