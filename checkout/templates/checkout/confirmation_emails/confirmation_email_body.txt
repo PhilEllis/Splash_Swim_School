@@ -1,0 +1,29 @@
+
+Certainly! Here's an adapted version of the email order confirmation text that aligns with the context of your swimming course service:
+
+Hello {{ order.full_name }}!
+
+Thank you for enrolling with Splash Swim School. We're excited to confirm your course enrollment. Here are the details of your order:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Course Name: {{ order.course.name }}
+Level: {{ order.course.level }}
+Start Date: {{ order.course.start_date }}
+Location: {{ order.course.location.name }}
+
+Order Total: £{{ order.order_total }}
+Grand Total: £{{ order.grand_total }}
+
+This course is booked for your child at the following location: {{ order.course.location.name }}.
+
+We have your contact number as {{ order.phone_number }}. Please ensure this is up to date so we can keep in touch regarding the course.
+
+If you have any questions or need to update your child's information, please don't hesitate to contact us at {{ contact_email }}.
+
+We look forward to welcoming your child to our swimming class and helping them embark on a fantastic swimming journey!
+
+Warm regards,
+
+Splash Swim School Team
