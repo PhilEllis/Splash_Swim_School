@@ -1188,7 +1188,7 @@ Sections Header
 }
 
 @media (max-height: 500px) {
-  #bag-hero {
+  #check-hero {
     height: 150vh;
   }
 }
