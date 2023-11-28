@@ -1310,10 +1310,46 @@ select option[value=""] {
 }
 
 /*--------------------------------------------------------------
-# Stripe
+# Checkout Success Hero
 --------------------------------------------------------------*/
 
-#check-hero .check-success {
+#success-hero {
+  width: 100%;
+  min-height: 115vh;
+  background: #000;
+  overflow-y: auto;
+  position: relative;
+}
+
+@media (max-height: 500px) {
+  #check-hero {
+    height: 150vh;
+  }
+}
+
+#success-hero .hero-bag,
+#success-hero .bag-inner,
+#success-hero .bag-item,
+#success-hero .bag-item::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#success-hero .bag-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#success-hero .bag-item::before {
+  content: "";
+  background-color: rgba(2, 9, 36, 0.8);
+}
+
+#success-hero .check-success {
   justify-content: center;
   align-items: center;
   position: absolute;

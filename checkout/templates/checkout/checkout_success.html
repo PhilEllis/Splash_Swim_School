@@ -13,7 +13,7 @@
 {% block content %}
 
 <!-- ======= Hero Levels Section adapted from HeroBiz Template BootstrapMade.com ======= -->
-<section id="check-hero">
+<section id="success-hero">
   <div class="hero-container container">
     <div class="hero-bag">
       <div class="bag-inner" role="listbox">
@@ -119,10 +119,10 @@
 			                  <div class= "col-12 text-center">
                           {% if from_profile %}
                               <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
-                                <span class="icon mr-2">
-                                <i class="fas fa-angle-left"></i>
+                                <span class="icon mr-2" style="color: white;">
+                                <i class="fa-solid fa-user"></i>
                                 </span>
-                                <span class="text-uppercase">Back to Profile</span>
+                                <span class="text-uppercase text-white">Back to Profile</span>
                               </a>
                           {% else %}
                               <a href="{% url 'home' %}" class="btn text-center">
