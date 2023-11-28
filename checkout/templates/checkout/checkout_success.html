@@ -115,20 +115,29 @@
                           </div>
                         </div>
                       </div>
-                        <div class="row">
-			              <div class= "col-12 text-center">
-				            <a href="{% url 'home' %}" class="btn text-center">
-					        <span class="icon" style="color: white;">
-						    <i class="fa-solid fa-person-swimming"></i>
-					        </span>
-					        <span class="text-uppercase text-white">Find out more about us</span>
-				            </a>
-			              </div>
-		                </div>
-                      </div>
+                      <div class="row">
+			                  <div class= "col-12 text-center">
+                          {% if from_profile %}
+                              <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                                <span class="icon mr-2">
+                                <i class="fas fa-angle-left"></i>
+                                </span>
+                                <span class="text-uppercase">Back to Profile</span>
+                              </a>
+                          {% else %}
+                              <a href="{% url 'home' %}" class="btn text-center">
+					                      <span class="icon" style="color: white;">
+						                    <i class="fa-solid fa-person-swimming"></i>
+					                      </span>
+					                      <span class="text-uppercase text-white">Find out more about us</span>
+				                      </a>
+                          {% endif %}
+			                  </div>
+		                  </div>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
         </div>
     </div>
