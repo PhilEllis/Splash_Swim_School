@@ -13,4 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
             toast.hide();
         }, 5000);
     });
+
+    // New code to disable/enable the 'Book Now' button using the specific ID
+    var bookNowButton = document.getElementById('book-now-btn');
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+
+    // Initially disable the 'Book Now' button
+    bookNowButton.disabled = true;
+
+    // Function to check if any radio button is selected
+    function updateButtonState() {
+        var isAnyRadioButtonChecked = Array.from(radioButtons).some(radio => radio.checked);
+        bookNowButton.disabled = !isAnyRadioButtonChecked;
+    }
+
+    // Add event listeners to all radio buttons
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', updateButtonState);
+    });
 });
