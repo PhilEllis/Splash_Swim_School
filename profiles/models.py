@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -33,3 +34,24 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class GuardianProfile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    contact_name = models.CharField(max_length=255)
+    relationship_to_child = models.CharField(max_length=255)
+    emergency_contact_number = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.user.username
+
+class ChildProfile(models.Model):
+    guardian = models.ForeignKey(GuardianProfile, on_delete=models.CASCADE, related_name='children')
+    name = models.CharField(max_length=255)
+    date_of_birth = models.DateField()
+    confidence_in_water = models.CharField(max_length=50, choices=[('Confident', 'Confident'), ('Moderate', 'Moderate'), ('Poor', 'Poor')])
+    medical_conditions = models.TextField(blank=True)
+    medication = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name

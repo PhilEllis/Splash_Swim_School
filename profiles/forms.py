@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, GuardianProfile, ChildProfile
 
 
 class UserProfileForm(forms.ModelForm):
@@ -32,3 +32,52 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
             self.fields[field].label = False
+
+class GuardianProfileForm(forms.ModelForm):
+    class Meta:
+        model = GuardianProfile
+        fields = ['contact_name', 'relationship_to_child', 'emergency_contact_number']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'contact_name': 'Contact Name',
+            'relationship_to_child': 'Relationship to Child',
+            'emergency_contact_number': 'Emergency Contact Number',
+        }
+
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
+            self.fields[field].label = False
+
+class ChildProfileForm(forms.ModelForm):
+    class Meta:
+        model = ChildProfile
+        fields = ['name', 'date_of_birth', 'confidence_in_water', 'medical_conditions', 'medication']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'name': 'Child’s Name',
+            'date_of_birth': 'Date of Birth (YYYY-MM-DD)',
+            'confidence_in_water': 'Confidence in Water',
+            'medical_conditions': 'Medical Conditions',
+            'medication': 'Medication',
+        }
+
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
+            self.fields[field].label = False
+            if field == 'date_of_birth':
+                self.fields[field].widget.attrs['type'] = 'date'
+        

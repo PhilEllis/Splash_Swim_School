@@ -94,6 +94,50 @@
   </section>
     <!-- End Hero Section -->
   <main>
+     <!-- Guardian Profile Form -->
+     <div class="container mt-5">
+      <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+              <h5 class="card-title">Guardian Information</h5>
+              <form method="POST" action="{% url 'profile' %}">
+                  {% csrf_token %}
+                  {{ guardian_form|crispy }}
+                  <button type="submit" class="btn btn-primary">Save Guardian Info</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Child Profiles Section -->
+  <div class="container mt-5">
+      <h3>Child Profiles</h3>
+      <div class="accordion" id="childrenAccordion">
+          {% for child in children %}
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                          Child Profile {{ forloop.counter }}
+                      </button>
+                  </h2>
+                  <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#childrenAccordion">
+                      <div class="accordion-body">
+                          <!-- Display child information here -->
+                          <strong>Name:</strong> {{ child.name }}<br>
+                          <strong>Date of Birth:</strong> {{ child.date_of_birth }}<br>
+                          <!-- Add more child details as needed -->
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+          <div class="mt-3">
+              <form method="POST" action="{% url 'profile' %}">
+                  {% csrf_token %}
+                  {{ child_form|crispy }}
+                  <button type="submit" class="btn btn-primary">Add Child</button>
+              </form>
+          </div>
+      </div>
+  </div>
   </main>
 {% endblock %}
 
