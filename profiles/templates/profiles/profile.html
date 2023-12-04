@@ -102,7 +102,7 @@
               <form method="POST" action="{% url 'profile' %}">
                   {% csrf_token %}
                   {{ guardian_form|crispy }}
-                  <button type="submit" class="btn btn-primary">Save Guardian Info</button>
+                  <button type="submit" name="update_guardian" class="btn btn-primary">Save Guardian Info</button>
               </form>
           </div>
       </div>
@@ -133,7 +133,7 @@
               <form method="POST" action="{% url 'profile' %}">
                   {% csrf_token %}
                   {{ child_form|crispy }}
-                  <button type="submit" class="btn btn-primary">Add Child</button>
+                  <button type="submit" name="add_child" class="btn btn-primary">Add Child</button>
               </form>
           </div>
       </div>
