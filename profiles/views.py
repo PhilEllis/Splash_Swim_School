@@ -67,3 +67,10 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def delete_guardian(request):
+    guardian_profile = GuardianProfile.objects.get(user=request.user)
+    guardian_profile.delete()
+    messages.success(request, "Guardian profile deleted successfully.")
+    return redirect('profile')

@@ -27,6 +27,7 @@
                     <hr>
                     <h2 class="logo-font mb-4 text-center">My Profile</h2>
                     <hr>
+                    <p>test</p>
                   </div>
                 </div>
                 <div class="row profile-form">
@@ -111,7 +112,11 @@
                   {% csrf_token %}
                   {{ guardian_form|crispy }}
                   <div class="d-flex justify-content-center">
-                  <button type="submit" name="update_guardian" class="btn btn-guardian">Save Guardian Info</button>
+                  <button type="submit" name="update_guardian" class="btn btn-guardian">Update Guardian Info</button>
+                  <!-- Button to Trigger Modal -->
+                  <button type="button" class="btn profile-delete-btn" data-bs-toggle="modal" data-bs-target="#deleteGuardianModal">
+                    <i class="fa-solid fa-trash-can fa-lg"></i>
+                  </button>
                   </div>
               </form>
           </div>
@@ -143,6 +148,12 @@
                           <strong>Confidence in Water:</strong> {{ child.confidence_in_water }}<br>
                           <strong>Medical Conditions:</strong> {{ child.medical_conditions }}<br>
                           <strong>Medication:</strong> {{ child.medication }}<br>
+                          <hr class="mb-0">
+                          <a href="#" class="btn profile-update-btn">Update</a>
+                          <button type="button" class="btn profile-delete-btn" data-bs-toggle="modal" data-bs-target="#deleteChildModal{{ child.id }}">
+                            <i class="fa-solid fa-trash-can fa-lg"></i>
+                          </button>
+
                       </div>
                   </div>
               </div>
@@ -166,6 +177,45 @@
     </div>
   </div>
   </main>
+
+<!-- Modal for Guardian Profile Deletion -->
+<div class="modal fade" id="deleteGuardianModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteGuardianModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteGuardianModalLabel">Confirm Guardian Profile Deletion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete the guardian profile? This action will also remove all associated child profiles and their information permanently. If you only need to update guardian details, please click 'Cancel' and edit the guardian form directly. Once deleted, this action cannot be undone.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <a href="{% url 'delete_guardian' %}" class="btn btn-danger">Delete</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal for Child Profile Deletion  -->
+<div class="modal fade" id="deleteChildModal{{ child.id }}" tabindex="-1" aria-labelledby="deleteChildModalLabel{{ child.id }}" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteChildModalLabel{{ child.id }}">Confirm Deletion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              Are you sure you want to delete this child profile? This action cannot be undone.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <a href="#" class="btn btn-danger">Delete</a>
+          </div>
+      </div>
+  </div>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}

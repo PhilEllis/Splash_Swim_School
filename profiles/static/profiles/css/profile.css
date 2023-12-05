@@ -127,15 +127,22 @@
   color: #85cfeb;
 }
 
+.profile-delete-btn {
+  color: #020924;
+  padding-left: 30px;
+}
+
+.profile-delete-btn:hover {
+  color: #d00000;
+}
 /*--------------------------------------------------------------
 # Child Profile
 --------------------------------------------------------------*/
 
 
-
 .accordion-button {
   color: #ffffff;
-  background-color: rgba(2, 9, 36, 0.8);
+  background-color: rgba(2, 9, 36, 0.7);
 }
 
 .accordion-button:not(.collapsed) {
@@ -160,6 +167,16 @@
   margin: 10px;
   color: #020924;
   background: #85cfeb;
+}
+
+.profile-update-btn {
+  color: #85cfeb;
+  font-size: 18px;
+}
+
+.profile-update-btn:hover {
+  color: #85cfeb;
+  font-size: 20px;
 }
 
 .btn-child:hover {
