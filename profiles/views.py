@@ -97,3 +97,10 @@ def update_child_profile(request, child_id):
     return render(request, 'profiles/update_child_profile.html', context)
 
 
+def delete_child_profile(request, child_id):
+    child = get_object_or_404(ChildProfile, id=child_id)
+    if request.method == 'POST':
+        child.delete()
+        messages.success(request, 'Child profile deleted successfully.')
+        return redirect('profile')
+    return redirect('profile')
