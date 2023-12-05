@@ -36,7 +36,7 @@ def profile(request):
                 child.guardian = guardian_profile
                 child.save()
                 messages.success(request, f'Child profile for {child.name} added successfully')
-                return redirect('profile')  # Redirect to clear the form
+                return redirect('profile')
 
     children = ChildProfile.objects.filter(guardian=guardian_profile)
 
