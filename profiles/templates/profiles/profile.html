@@ -149,11 +149,10 @@
                           <strong>Medical Conditions:</strong> {{ child.medical_conditions }}<br>
                           <strong>Medication:</strong> {{ child.medication }}<br>
                           <hr class="mb-0">
-                          <a href="#" class="btn profile-update-btn">Update</a>
+                          <a href="{% url 'update_child_profile' child.id %}" class="btn profile-update-btn">Update</a>
                           <button type="button" class="btn profile-delete-btn" data-bs-toggle="modal" data-bs-target="#deleteChildModal{{ child.id }}">
                             <i class="fa-solid fa-trash-can fa-lg"></i>
                           </button>
-
                       </div>
                   </div>
               </div>

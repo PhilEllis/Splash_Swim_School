@@ -74,3 +74,26 @@ def delete_guardian(request):
     guardian_profile.delete()
     messages.success(request, "Guardian profile deleted successfully.")
     return redirect('profile')
+
+
+def update_child_profile(request, child_id):
+    child = get_object_or_404(ChildProfile, id=child_id)
+    guardian_profile = child.guardian
+
+    if request.method == 'POST':
+        form = ChildProfileForm(request.POST, instance=child)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Child profile for {child.name} updated successfully')
+            return redirect('profile')
+    else:
+        form = ChildProfileForm(instance=child)
+
+    context = {
+        'form': form,
+        'child': child,
+        'guardian': guardian_profile
+    }
+    return render(request, 'profiles/update_child_profile.html', context)
+
+

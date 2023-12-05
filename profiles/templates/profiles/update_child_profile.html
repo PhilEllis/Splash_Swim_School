@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+      <div class="row">
+        <div class="col"></div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Hero Levels Section adapted from HeroBiz Template BootstrapMade.com ======= -->
+<section id="bag-hero">
+  <div class="hero-container container">
+    <div class="hero-bag">
+      <div class="bag-inner" role="listbox">
+        <div class="bag-item active" style="background-image: url(/media/iStock-1485454176.jpg)">
+          <div class="bag-number">
+            <div class="container mb-2 mt-2">
+              <div class="row">
+                <div class="col">
+                  <hr>
+                  <h2 class="logo-font mb-4 text-center text-white">Update Child Profile</h2>
+                  <hr>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <form method="POST" action="{% url 'update_child_profile' child.id %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Child's Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ child.name }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date_of_birth" class="form-label">Date of Birth</label>
+                                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ child.date_of_birth|date:'Y-m-d' }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confidence_in_water" class="form-label">Confidence in Water</label>
+                                        <select class="form-select" id="confidence_in_water" name="confidence_in_water">
+                                            <option value="Confident" {% if child.confidence_in_water == 'Confident' %}selected{% endif %}>Confident</option>
+                                            <option value="Moderate" {% if child.confidence_in_water == 'Moderate' %}selected{% endif %}>Moderate</option>
+                                            <option value="Poor" {% if child.confidence_in_water == 'Poor' %}selected{% endif %}>Poor</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="medical_conditions" class="form-label">Medical Conditions</label>
+                                        <textarea class="form-control" id="medical_conditions" name="medical_conditions">{{ child.medical_conditions }}</textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="medication" class="form-label">Medication</label>
+                                        <textarea class="form-control" id="medication" name="medication">{{ child.medication }}</textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-get-started">Update Profile</button>
+                                        <a href="{% url 'profile' %}" class="btn" style="color: #85cfeb;">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- End Hero Section -->
+<main>
+</main>
+{% endblock %}
