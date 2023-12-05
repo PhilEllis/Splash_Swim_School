@@ -35,7 +35,9 @@
                     <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                         {% csrf_token %}
                         {{ user_form|crispy }}
+                        <div class="d-flex justify-content-center">
                         <button class="btn" id="profile-button">Update Information</button>
+                        </div>
                     </form>
                   </div>
                   <div class="col-12 col-lg-6 mb-5 mt-2">
@@ -96,32 +98,46 @@
   <main>
      <!-- Guardian Profile Form -->
      <div class="container mt-5">
-      <div class="card mx-auto" style="width: 18rem;">
+        <header class="section-header">
+            <h3>Swimming Safely</h3>
+            <p>Providing accurate guardian information is crucial for ensuring the safety and well-being of your child. In case of any emergencies, we need to have reliable contact details to keep you informed and take necessary actions promptly.</p>
+          </header>
+        <div class="row">
+            <div class="col-6 mx-auto">
+      <div class="card shadow" style="min-width: 200px;">
           <div class="card-body">
               <h5 class="card-title">Guardian Information</h5>
               <form method="POST" action="{% url 'profile' %}">
                   {% csrf_token %}
                   {{ guardian_form|crispy }}
-                  <button type="submit" name="update_guardian" class="btn btn-primary">Save Guardian Info</button>
+                  <div class="d-flex justify-content-center">
+                  <button type="submit" name="update_guardian" class="btn btn-guardian">Save Guardian Info</button>
+                  </div>
               </form>
           </div>
       </div>
+    </div>
+    </div>
   </div>
 
   <!-- Child Profiles Section -->
   <div class="container mt-5">
-      <h3>Child Profiles</h3>
-      <div class="accordion" id="childrenAccordion">
-          {% for child in children %}
+    <header class="section-header">
+        <h3>Child Profiles</h3>
+        <p>Complete and detailed information about your child, including medical conditions and allergies, is essential for us to offer the safest and most supportive environment. This allows us to tailor our care and activities to meet your child's unique needs and respond effectively in case of any health concerns.</p>
+      </header>
+      <div class="row">
+      <div class="col-10 mx-auto">
+        {% for child in children %}
+      <div class="accordion mb-5" id="childrenAccordion">
               <div class="accordion-item">
                   <h2 class="accordion-header" id="heading{{ forloop.counter }}">
                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                          Child Profile {{ forloop.counter }}
+                        {{ child.name }}
                       </button>
                   </h2>
                   <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#childrenAccordion">
                       <div class="accordion-body">
-                          <!-- Display child information here -->
                           <strong>Name:</strong> {{ child.name }}<br>
                           <strong>Date of Birth:</strong> {{ child.date_of_birth }}<br>
                           <strong>Confidence in Water:</strong> {{ child.confidence_in_water }}<br>
@@ -130,15 +146,24 @@
                       </div>
                   </div>
               </div>
+             </div>
           {% endfor %}
-          <div class="mt-3">
+          <div class="col-10 mx-auto mb-5">
+          <div class="card shadow mt-5">
+            <div class="card-body">
+                <h5 class="card-title">Add a Child Profile</h5>
               <form method="POST" action="{% url 'profile' %}">
                   {% csrf_token %}
                   {{ child_form|crispy }}
-                  <button type="submit" name="add_child" class="btn btn-primary">Add Child</button>
+                  <div class="d-flex justify-content-center">
+                  <button type="submit" name="add_child" class="btn btn-child">Add Child</button>
+                  </div>
               </form>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
   </main>
 {% endblock %}

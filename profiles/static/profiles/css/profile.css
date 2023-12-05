@@ -102,3 +102,122 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+/*--------------------------------------------------------------
+# Guardian Profile
+--------------------------------------------------------------*/
+
+.btn-guardian {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  border-width: 0;
+  transition: 0.5s;
+  margin: 10px;
+  color: #020924;
+  background: #85cfeb;
+}
+
+.btn-guardian:hover {
+  background: #020924;
+  color: #85cfeb;
+}
+
+/*--------------------------------------------------------------
+# Child Profile
+--------------------------------------------------------------*/
+
+
+
+.accordion-button {
+  color: #ffffff;
+  background-color: rgba(2, 9, 36, 0.8);
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: rgba(2, 9, 36, 0.8);
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: white;
+}
+
+.btn-child {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  border-width: 0;
+  transition: 0.5s;
+  margin: 10px;
+  color: #020924;
+  background: #85cfeb;
+}
+
+.btn-child:hover {
+  background: #020924;
+  color: #85cfeb;
+}
+
+.custom-child {
+  background-color: rgba(2, 9, 36, 0.6);
+}
+
+.card-title {
+  color: #020924;
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+}
+
+.textarea {
+  height: 100px;
+}
+
+/* -------------------------------------------------------------
+Sections Header
+--------------------------------------------------------------*/
+.section-header h3 {
+  font-size: 32px;
+  color: #020924;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-header h3::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-header h3::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #85cfeb;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-header p {
+  text-align: center;
+  padding-bottom: 30px;
+  color: #333;
+}
