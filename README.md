@@ -147,6 +147,15 @@ These business needs are not only aimed at improving the operational efficiency 
         <img src="media/levelmockup.png" height="500px" />
 
 
+## Splash Swim School Future Iterations
+
+- The next step in the process of overhauling Splash Swim Schools online presence and business flow will be to connect emails and ensure that the collection of data complies with GDPR. This will potentially mean adding additional check fields into the registration process. The ability to send confirmation emails and course update emails will be vital to the business. 
+
+- In the next phase of development for this project, a pivotal enhancement will be the integration of the enrolment and course capacity models. These additions should seamlessly connect each child's profile to specific course product, offering a clear and efficient view of each class makeup within the admin but also allowing the user to directly see which class product their child is currently enrolled on. The child profile will contain the course name on the right hand side of the accordion. 
+By strategically placing key elements within our existing models, such as `ChildProfile` and `GuardianProfile`, and linking these to the proposed `EnrolmentModel`, we pave the way for a smooth business management as course capacities will be automatically managed, mitigating the risk of overbooking and ensuring optimal class sizes. Furthermore, this advancement will provide teachers with easier access to the vital information about the children in their classes that is already stored within the admin view. This greatly enhances the safety and personalisation of the swim school's services. 
+
+- Once the enrolment and capacity models are in place and email GDPR checks are active the third iteration would be to enable the management to upload the individual swimmers reports to the child's profile so that the user can login to view their child's progress. This process is currently done manually by email or by parents asking at the reception desk. This feature would greatly enhance the parents interaction with the service but also dramatically cut admin time. 
+
 
 <a name="technologies"></a>
 
