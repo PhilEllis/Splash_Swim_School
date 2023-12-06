@@ -1,1 +1,1 @@
-web: gunicorn Splash_Swim_School.wsgi:application
+web: gunicorn splash.wsgi:application
