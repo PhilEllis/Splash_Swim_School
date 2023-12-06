@@ -1203,52 +1203,26 @@ Sections Header
 # Checkout Hero
 --------------------------------------------------------------*/
 
-#check-hero {
-  width: 100%;
-  min-height: 170vh;
-  background: #020924;
-  overflow-y: auto;
-  position: relative;
+.checkout-container {
+  padding-top: 100px;
 }
 
-@media (max-height: 500px) {
-  #check-hero {
-    height: 150vh;
+#checkout-hero {
+    width: 100%;
+    min-height: 1000px;
+    background-image: url("/media/Splashheroopaque.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    position: relative;
   }
-}
-
-#check-hero .hero-bag,
-#check-hero .bag-inner,
-#check-hero .bag-item,
-#check-hero .bag-item::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-#check-hero .bag-item {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#check-hero .bag-item::before {
-  content: "";
-  background-color: rgba(2, 9, 36, 0.8);
-}
-
-#check-hero .bag-number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 20px;
-  top: 20px;
-  left: 50px;
-  right: 50px;
-}
+  
+  @media (max-height: 500px) {
+    #checkout-hero {
+      height: 150vh;
+    }
+  }
 
 .check-form {
   --bs-table-bg: transparent !important; 
