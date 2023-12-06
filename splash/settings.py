@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-philellis-splashswimsch-y886wql2wow.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['splash-swim-school.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -134,7 +134,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
