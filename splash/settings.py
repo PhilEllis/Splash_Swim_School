@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['splash-swim-school.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['splash-swim-school-b17312c07dec.herokuapp.com', 'localhost']
 
 
 # Application definition
