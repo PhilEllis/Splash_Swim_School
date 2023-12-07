@@ -45,6 +45,7 @@ class GuardianProfile(models.Model):
     def __str__(self):
         return self.user.username
 
+
 class ChildProfile(models.Model):
     guardian = models.ForeignKey(GuardianProfile, on_delete=models.CASCADE, related_name='children')
     name = models.CharField(max_length=255)

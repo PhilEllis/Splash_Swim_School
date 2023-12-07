@@ -33,6 +33,7 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
             self.fields[field].label = False
 
+
 class GuardianProfileForm(forms.ModelForm):
     class Meta:
         model = GuardianProfile
@@ -54,6 +55,7 @@ class GuardianProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
             self.fields[field].label = False
+
 
 class ChildProfileForm(forms.ModelForm):
     class Meta:
@@ -80,4 +82,3 @@ class ChildProfileForm(forms.ModelForm):
             self.fields[field].label = False
             if field == 'date_of_birth':
                 self.fields[field].widget.attrs['type'] = 'date'
-        

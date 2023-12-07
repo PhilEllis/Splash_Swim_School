@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Course
 
+
 def bag_contents(request):
     bag_items = []
     total = Decimal('0.00')
@@ -21,9 +22,9 @@ def bag_contents(request):
             'start_date': course.start_date,
             'location_name': course.location.name,
             'quantity': quantity,
-            'product': course,  # Use course directly
+            'product': course,
         })
-    
+
     grand_total = total
 
     context = {

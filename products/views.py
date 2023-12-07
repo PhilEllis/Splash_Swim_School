@@ -2,16 +2,18 @@ from django.shortcuts import render
 from .models import Course
 from locations.models import Location
 
+
 # Create your views here.
 def level1_courses(request):
     """ A view to display level 1 swim lesson courses """
     level1_courses = Course.objects.filter(level='Level 1')
-    locations = Location.objects.all()  
+    locations = Location.objects.all()
     context = {
         'courses': level1_courses,
         'locations': locations,
     }
     return render(request, 'products/level1.html', context)
+
 
 def level2_courses(request):
     """ A view to display level 2 swim lesson courses """

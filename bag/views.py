@@ -1,13 +1,16 @@
-from django.shortcuts import render,redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from products.models import Course
 
 # Create your views here.
+
+
 def view_bag(request):
     """  view that renders the bag contents page """
 
     return render(request, 'bag/bag.html')
+
 
 def add_course_to_bag(request):
     """ Add a swimming course to the shopping bag """
@@ -36,6 +39,7 @@ def add_course_to_bag(request):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
 
 @require_POST
 def remove_course_from_bag(request, course_id):

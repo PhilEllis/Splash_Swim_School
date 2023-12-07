@@ -119,19 +119,23 @@ Files Tested
 
 <a name="#html"></a>
 ## HTML5 validator
-- base.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls.
-- home.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls.
-- about.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls.
-- add_note.html - Passed after some form editing - used HTML from View Page Source to remove Jinja Templating and Statci urls.
-- edit_note.html - Passed after some form editing - used HTML from View Page Source to remove Jinja Templating and Statci urls.
-- login.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls.
-- signup.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls
-<img src="documents/htmlvalidator.png" />
+each file tested individually not utulising the page source due to the fact the templating in the nav was throwing off the error reports. 
+- base.html - Testing by copying content of html over from the html file directly. Only warnings received due to static urls and templating.
+- index.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls (flags up issues with the nav which is inherited from the base - no issues with these elements when testing the Nav).
+- level1.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- level2.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- level3.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- level4.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- bag.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- checkout.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- checkout_success.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- profile.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+- update_child_profile - Passed using HTML only - only warnings created when picking up static urls and templating logic.
 
 
 <a name="#js"></a>
 ## Javascript validator
-- Reported Metrics - 
+- Reported Metrics - custom.js
 There are 7 functions in this file.
 
 Function with the largest signature take 1 arguments, while the median is 1.
@@ -142,27 +146,61 @@ The most complex function has a cyclomatic complexity value of 1 while the media
 
 One undefined variable line 5 bootstrap
 
+No Warnings
+
 <img src="media/jsvalidation.png" />
+
+- I have run the stripe_elements.js code taken from the CI boutique ado source code. This gives out a warning of 118	Missing semicolon. I have not amended this as i have not wanted to interupt the working given code that has been copied over from the walkthrough. 
+
 
 <a name="#python"></a>
 ## Python validator
-- routes.py - All clear, no errors found
 
-<img src="documents/routes.png" height="200px"/>
+**splash**
+- urls.py - All clear, no errors found
+- settings.py - All clear, no errors found - line too long
+- asgi.py - All clear, no errors found
+- wsgi.py - All clear, no errors found
 
+**profiles**
+- admin.py - All clear, no errors found
+- forms.py - All clear, no errors found - line too long
+- models.py - All clear, no errors found - line too long
+- urls.py - All clear, no errors found - line too long
+- views.py - All clear, no errors found - line too long
+
+**profiles**
+- admin.py - All clear, no errors found
+- apps.py - All clear, no errors found
+- models.py - All clear, no errors found
+- urls.py - All clear, no errors found
+- views.py - All clear, no errors found
+
+**locations**
+- admin.py - All clear, no errors found
+- apps.py - All clear, no errors found
 - models.py - All clear, no errors found
 
-<img src="documents/models.png" height="200px"/>
+**home**
+- apps.py - All clear, no errors found
+- urls.py - All clear, no errors found
+- views.py - All clear, no errors found
 
-- __init__.py - All clear, no errors found
+**profiles**
+- admin.py - All clear, no errors found
+- apps.py - All clear, no errors found
+- forms.py - All clear, no errors found - line too long
+- models.py - All clear, no errors found - line too long
+- signals.py - All clear, no errors found
+- urls.py - All clear, no errors found - line too long
+- views.py - All clear, no errors found - line too long
+- views.py - All clear, no errors found
 
-<img src="documents/init.png" height="200px"/>
-
-- run.py - All clear, no errors found
-
-  <img src="documents/run.png" height="200px"/>
-
-- env.py - All clear, no errors found
+**bag**
+- apps.py - All clear, no errors found
+- contexts.py - All clear, no errors found
+- urls.py - All clear, no errors found - line too long
+- views.py - All clear, no errors found - line too long
 
 
 <a name="#access"></a>
@@ -172,34 +210,8 @@ One undefined variable line 5 bootstrap
 - At the time of testing Lighthouse would not complete its warm up on the local server or the Heroku deployed app so wave was utilised instead
 
 ### Wave testing
-- Wave testing highlighted several contrasting issues with Home page and about page Hero and Recap areas text. Now initially I used the contrast tool to evaluate what Hex colour would pass and applied those colours to the text areas in question. On inspecting these areas after the changes were made they passed the wave contrast checker but I strongly felt that the text was less readable. I have provided screenshots of the before and after of these sections for you in order to demonstrate the change and why I chose to go against the contrast guidance from Wave. I also read within the Wave checker that “WAVE does not detect contrast of background gradients, transparency, etc. For background images, WCAG requires a fallback background color in case the image does not display” I believe that Wave has not been able to read the background accurately enough to assess the correct contrast for the text areas in question. There are currently No erros present only Contrasting errors as detailed below.
-
-    - Changes I have made based on wave testing 
-        - aria-label="Scroll to next section" Added to both downward chevrons on home and about
-        - Section title from #1f1f1f to #0F0F0F
-        - Body text from #444444 to #1C1C1C
-    - Changes i trialed and chose to revert to the before images;
-        - Hero & Recap text for the home and about page changed from #ADAA99 to #7A7462 
-        
-        Before 
-        
-        <img src="documents/herobefore.png" height="200px"/> 
-        
-        After
-        
-        <img src="documents/heroafter.png" height="200px"/>
-
-
-        - Title Anam Cara in the recap section of home and about from #FFD685 to #946800.
-
-        Before
-
-        <img src="documents/recapbefore.png" height="200px"/>
-        
-        After
-
-        <img src="documents/recapafter.png" height="200px"/>
-
+- Wave testing highlighted several contrasting issues throughout with the light blue against the white. This branding is pivitol to the site and getting user feedback nobody from the target audience have had issues with the general contrast. This is definitely something to take into consideration in the future when the team do any further rebranding.  
+- Wave testing has identified the blank social media links.
 
 
 <a name="#compatibility"></a>
