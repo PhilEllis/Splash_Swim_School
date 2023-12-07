@@ -158,16 +158,16 @@ No Warnings
 
 **splash**
 - urls.py - All clear, no errors found
-- settings.py - All clear, no errors found - line too long
+- settings.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
 - asgi.py - All clear, no errors found
 - wsgi.py - All clear, no errors found
 
 **profiles**
 - admin.py - All clear, no errors found
-- forms.py - All clear, no errors found - line too long
-- models.py - All clear, no errors found - line too long
-- urls.py - All clear, no errors found - line too long
-- views.py - All clear, no errors found - line too long
+- forms.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- models.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
 
 **profiles**
 - admin.py - All clear, no errors found
@@ -189,18 +189,18 @@ No Warnings
 **profiles**
 - admin.py - All clear, no errors found
 - apps.py - All clear, no errors found
-- forms.py - All clear, no errors found - line too long
-- models.py - All clear, no errors found - line too long
+- forms.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- models.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
 - signals.py - All clear, no errors found
-- urls.py - All clear, no errors found - line too long
-- views.py - All clear, no errors found - line too long
+- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
 - views.py - All clear, no errors found
 
 **bag**
 - apps.py - All clear, no errors found
 - contexts.py - All clear, no errors found
-- urls.py - All clear, no errors found - line too long
-- views.py - All clear, no errors found - line too long
+- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
 
 
 <a name="#access"></a>
@@ -211,7 +211,7 @@ No Warnings
 
 ### Wave testing
 - Wave testing highlighted several contrasting issues throughout with the light blue against the white. This branding is pivitol to the site and getting user feedback nobody from the target audience have had issues with the general contrast. This is definitely something to take into consideration in the future when the team do any further rebranding.  
-- Wave testing has identified the blank social media links.
+- Wave testing has identified errors in reagrds to the blank social media links and the templating nav links. 
 
 
 <a name="#compatibility"></a>
@@ -278,5 +278,9 @@ No Warnings
 
 
 - I personally found the placement of the elements within the for loops and if else elements within the html templates tricky. The second child profile to be added did not inherit the normal bootsrtap Accordion styling. I discovered that i was starting the for loop inside the accordion elemey instead of outside of encaplutaing the form. 
+
+- Toasts error due to the conflict between the latest bootstrap not requiring jQuery - I ended up using custom javascript to initialise the toast messages.
+
+- Error thrown when user clicked the book now button to purchase a course without selecting a radio button against a course product. This was righted with custom JS to disable the book now button until a radio button is selected.
 
 - The more complex hero sections with forms in them on the checkout and profile pages were displaying no margin top on smaller screen sizes making the header and paragraph text unreadable. They were also scrolling vertically but i could not get the background image to cover leaving an overlap and blank space on scrolling. This caused me great frustration and in the end I opted to replace the more complex container structure with a simple container and upload an additional background images that contained the overlay from the previous containers. These containers mow display all of their content and the image stretches approproiately on smaller screen sizes. 
