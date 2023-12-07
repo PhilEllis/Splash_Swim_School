@@ -1,13 +1,13 @@
 # Splash Swim School
 
-<h1 align="center"><img src="documents/AnamcaraPreview.png"/></h1>
+<h1 align="center"><img src="media/amiresponsive.png"/></h1>
 
 
-<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="media/favicon.png" width="30px" /></a> Live website
+<a href="https://splash-swim-school-b17312c07dec.herokuapp.com/"><img src="media/favicon.png" width="30px" /></a> Live website
 
-<a href="https://github.com/PhilEllis/AnamCara-milestone-3/tree/main"><img src="media/githublogo.png" width="30px" /></a> GitHub Repository
+<a href="https://github.com/PhilEllis/Splash_Swim_School"><img src="media/githublogo.png" width="30px" /></a> GitHub Repository
 
-<a href="https://anamcara-605224a27f19.herokuapp.com/"><img src="media/herokulogo.png" width="30px" /></a> Heroku Repository
+<a href="https://dashboard.heroku.com/apps/splash-swim-school"><img src="media/herokulogo.png" width="30px" /></a> Heroku Repository
 
 # Welcome to Splash Swim School!
 
@@ -95,13 +95,13 @@ These business needs are not only aimed at improving the operational efficiency 
 
 >### Structure Considerations
 - #### Schema
-    - Below is the reference table for the database schema that i originally created. Involving the parent profile who is able to create their child's profile along with the enrolment model that will communicate to the course model. 
+    - Below is the reference table for the model schema that i originally created. Involving the parent profile who is able to create their child's profile along with the enrolment model that will communicate to the course model. 
 
         <img src="media/initaldatabase.png" />
 
-    - This is a rough representation of the evolved schema that now includes
+    - Below is a more acurate reflection of how the model structure of this application has evolved. As referenced below in future iterations the enrolment model from above will be introduced and connected to the child profile along with a capacity model that connects directly to the enrolment model.
 
-        <img src="media/initaldatabase.png" />
+        <img src="media/splashmodels.png" />
 
 
 - #### Wireframes
@@ -146,6 +146,66 @@ These business needs are not only aimed at improving the operational efficiency 
         <img src="media/homemockup.png" height="600px" />
         <img src="media/levelmockup.png" height="500px" />
 
+<a name="features"></a>
+## Features
+
+### Existing Features
+    
+>#### Common Features Across All Pages
+- **Favicon** - 
+    - a favicon of the symbol used throughout the site is visible on the site tab so that all users can easily navigate back to the site with ease when multiple tabs are open. 
+- **Header** - 
+    - Provide instant impression on the user but simple structure so as not to distract.
+    - I opted to use a slightly transparent navigation bar with a left aligned logo that links back to the home page. 
+    - The navigation elements are on the right and all links behave in the same way.
+    - The toggler provides the links to be displayed in a drop down manner on smaller view ports.
+    - The navigation includes the levels broken down in a drop down format to enable the user to navigate swiftly to their level of choice. 
+    - The navigation element also provides the user with quick reference to the bag total and allows the option to navigate to the checkout.
+    - The navigation also provides the login/out elements for users. 
+- **Accessibility**
+    - The hamburger menu has aria-label added to let users with screen readers know where the toggleable menu is.
+    - All colours have been contrast tested. The hamburger item has been wrapped in a blue to highlight and create more contrast. 
+- **Buttons**
+    - The same hover transition and colours have been applied to the buttons across all pages in order to create a cohesive look and make the call to action clear and easy to find. The font is the same for all buttons.
+    - When two buttons are close together one has been maintaned as a button and the other changed to an icon or a link to assist the user in differentiating between the two. 
+- **Responsiveness**
+    - All Pages have been built around Bootstrap 5'S responsive grid layout and provide the same functionality regardless of the viewport size,
+- **Footer**
+    - The footer consistent through the site provides an additional navigation option thought to be helpful on the longer pages. 
+    
+
+
+>### Specific to Pages
+-  **Index/Home**
+    - Swim with us - a welcoming intro on what to expect from the site that provides a quick link to book now for those visitors arriving with that instant intent. 
+    - Who we are - This section gives the business a chance to introduce themselves and provide a quick overview of the information contained lower down through the page allowing the user to skip to the information they want to read.
+    - Swim levels - This section provides a chance for the business to explain why they have different levels but also to  identify what those levels are. This section also provides a book now button to enable the user to initiate their customer journey. 
+    - Splash facts allows a small space for the business to promote the facts and figures it is most proud of. this has been added to help create a sense of trust with new customers.
+    - Meet out team enables parents to see who is teaching their children and also allows the parents to introduce the teacher to the child ahead of time helping with assurance and nerves starting a new course. 
+-  **Levels 1-4**
+    - Level Identification allowing the user to see that they are on the correct page instantly
+    - Level explanation along with the specific guide for parents in regards to the ability level required before booking said level. This is to help combat children being booked on to courses that are beyond their ability or not challenging enough. 
+    - Course times information followed by a display of all of the courses available at that level including their location information. with radio buttons to allow the course to be selected and added to the bag
+    - FAQ's unique to each level answering any doubts or queries the user may have that is preventing them from purchasing. This feature should help relieve the demand on the admin and reception staff.
+    
+-  **Bag**
+    - Displays bag information and enables users to delete the course in their bag or navigate to the checkout.
+    - One course can be purchased at a time to encourage users to log in and create their child profile information, this will be vital to the enrolment model when it is implemented. The user can return to the home page and purchase another separately. The bag automatically swaps the course in its bag to the next purchased course but warns the user that this has happened. 
+  -  **checkout**
+		- Provides the form to enable the capture of data for the purchase of a course using STRIPE.
+		- Provides an order summary allowing the user to check they are purchasing the correct course. 
+  -  **Profile**
+		- Presents the user with an oportunity to update the contact details associated with their account for future purchases.
+		- Provides the user with an overview of their purchases.
+		- Invites the user to create a Guardian profile in order to provider in case of emergency contact.
+		- Child profile form inputs that allow the user to create child profiles linked to the guardian information. This enables the user to provide critical information directly to the business that will help to keep the children swimming safe. 
+		- Child profile displays mean that you can clearly see the information supplied and presents the user with the option to update and delete each child profile individually. 
+-  **login**
+    - login form
+    - links to sign up 
+-  **sign up**
+   - sign up form
+
 
 ## Splash Swim School Future Iterations
 
@@ -169,14 +229,26 @@ By strategically placing key elements within our existing models, such as `Child
 - jQuery 
 - Python - Providing the main backend development for this application.
    - asgiref==3.7.2
+   - asgiref==3.7.2
+   - boto3==1.33.9
+   - botocore==1.33.9
+   - dj-database-url==0.5.0
    - Django==3.2
    - django-allauth==0.41.0
+   - django-countries==7.2.1
    - django-crispy-forms==1.14.0
+   - django-storages==1.14.2
+   - gunicorn==21.2.0
+   - jmespath==1.0.1
    - oauthlib==3.2.2
+   - psycopg2==2.9.9
    - python3-openid==3.2.0
    - pytz==2023.3.post1
    - requests-oauthlib==1.3.1
+   - s3transfer==0.8.2
    - sqlparse==0.4.4
+   - stripe==7.5.0
+   - urllib3==1.26.18
 
 
 >### Frameworks, Libraries, Programs, Online Resources Used
@@ -189,6 +261,8 @@ By strategically placing key elements within our existing models, such as `Child
 - [Lucid](https://lucid.app/) used to create database flow
 - [DrawSQL](https://drawsql.app/) used to visualise the database structure
 - [Django Allauth](https://docs.allauth.org/en/latest/) used to help integrate the Allauth user authentication
+- [Cripsy Forms documenation](https://django-crispy-forms.readthedocs.io/en/latest/) Used to familarise myself further with the use of crispy forms within the application. 
+- -  [# Geeks for Geeks](https://www.geeksforgeeks.org/django-templates) Used to help me better understand Django template format & for loops. 
 - [Github](https://github.com/) 
 - [Bootstrap v5.3](https://getbootstrap.com/) - Responsive Elements Hero, navigation, buttons & cards.
 - [Bootstrapmade](https://bootstrapmade.com/) - Bootstrap template site - used to form the base HTML & CSS for structure of the site. The following sections were taken for the following templates, stripped and edited to sit in line with the site design and layout. 
@@ -228,7 +302,7 @@ By strategically placing key elements within our existing models, such as `Child
    
 - [Figma](https://www.figma.com/file/ladBUkKqWA50bv0xDRaMUH/SPLANETS?node-id=0%3A1&t=rRbFBuY40vnsdoR4-1) used to create mock up designs
 - [amiresponsive](https://ui.dev/amiresponsive) Used to create the live image capture of site
-https://lucid.app/
+
 <a name="#testing"></a>
 ## Testing
 
@@ -273,7 +347,7 @@ This website was published using [GitHub Pages] ElephantSQL & Heroku (https://pa
 5. Go to the settings tab, click reveal config vars and input the following:
 
 
-<img src="documents/ConfigVars1.png" />
+    <img src="media/configvars.png" height="300px" />
 
 6. Ensure NOTE to enter DEVELOPMENT and DB_URL from the env.py file as a Config Var. 
 7. Go to the “Deploy” tab of your app In the Deployment method section, select “Connect to GitHub
@@ -304,7 +378,7 @@ If you wish to clone or download this repository to your local device you can fo
 
 >### Code 
 
-- The core of the application has been derived from the code Institute Relational Database Walkthrough Boutique Ado and amended to fit the needs of my application. I tried to make a strong distinction within the structure of the site to clearly mark the difference and try to challenge myself to adapt the walkthrough. The areas that are less distinguished are that of the Checkout app, Stripe and User Porfile. 
+- The core of the application has been derived from the code Institute Relational Database Walkthrough Boutique Ado and amended to fit the needs of my application. I tried to make a strong distinction within the structure of the site to clearly mark the difference and try to challenge myself to adapt the walkthrough. The areas that are less distinguished are that of the bag, Checkout app, Stripe and initial User Porfile. 
 - [Bootstrapmade](https://bootstrapmade.com/) - used as an alternative to the Bootstrap Library to form the base HTML & CSS for structure of the site. The following sections were taken for the following templates, stripped and edited with custom CSS and additional HTML to sit in line with the site design and layout.
 	- Bizpage Template- Hero CSS - Contact Us - Footer
 	- Newbiz Template- Level1-4 Main content structure
@@ -313,6 +387,8 @@ If you wish to clone or download this repository to your local device you can fo
 		- [# Elevate Your Django Filtering](https://python.plainenglish.io/elevate-your-django-filtering-game-crafting-expert-level-filtersets-30f4dac7d9a6)
 		- [# Django Ecommerce Part 5 | Fetch products by category in django](https://www.youtube.com/watch?v=Bs_FtLv38Fw)
 		-  [# Django Rest Framework](https://www.django-rest-framework.org/api-guide/filtering/)
+    
+
 - Styling of Radio Input taken from the basis provided within https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons
 - JS to activate the messages via toast is my custom js. all the rest of the JS code is that from the walkthrough.
 - All of the rest of the code was written by the author - Philippa Ellis
