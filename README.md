@@ -88,8 +88,6 @@ These business needs are not only aimed at improving the operational efficiency 
     3. As an admin, I want to manage course capacity, track enrollments, and remove a child from a class when necessary.
     4. As an admin, I want to have a clear overview of enrollment, payment status, and capacity levels to improve course management.
 
-    ## Splash Swim School Future Iterations. 
-
 
 ## Design Choices
 

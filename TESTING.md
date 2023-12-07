@@ -234,55 +234,49 @@ No Warnings
 >### External testing
 - All testers confirmed that they coud sign up, login and logout.
 - All testers confirmed that all buttons and navigation links performed the correct function.
-- All testers confirmed that the forms submitted and messages displayed correctly.
-- All testers confirmed that they could read messages, update and delete their messages.
+- All testers confirmed that the forms submitted on the checkout, child and guardian profiles displayed correctly.
+- All testers confirmed that they could, update and delete the relevant sections of the Guardian and Child Profiles.
 
+- 
 >### User Stories - Customer
-- From user story 1;
-    - Community message board created providing a space for likeminded individuals to connected and foster meaningful and supportive interactions.
-    - Users able to login and edit or delete messages should they change their mind.
-    - Users able to scroll through the message board to read and reflect on their previous messages and personal growth.
-    - the implementation of a 100 minimum requirement within the text area means that the user needs to take their time and really express in detail how they are feeling rather than quick messages with no thought behind them. The selection of a Publish Date takes the immediacy out of the posting. Both of these elements work together to create a slower less intrusive way of expressing yourself and connecting.
+- From user story - Viewing and Navigation:;
+    - The parent is able to view all of the specific information about a level and them whilst on the same page is able to select to book. 
+    - The prerequisites for each level are provided at the top of the swimming level page. Clear for everyone to see. This information is also reinforced within the FAQ's section.
+    - The admin can log in add courses, link them to locations. They can go in and change the level in the admin of the purchased product should the child need to move groups. The amdmin are able to see the pertinent child information and the most importantly mediaction and in case of emergency details. 
 
 
-
-- From user story 2;
-     - The structure of the site has been kept to a traditional interface meaning that the user does not have to think about how they navigate to where they want to go. Nav links at the top and the bottom of the page along with the Discover links funnel the user to the correct pages. All restricted pages invite the user to login and once the user has actioned logging in, out, signing up or submitting, updating or deleting a message they are redirected intuitively to relevant next page for them.
-    - The selected Publish date allows users to choose when they publish their message.
-    - The Colour palette has been specifically chosen to create a tranquil peaceful experience whilst still retaining the modern Celtic vibe in line with the brand. The use of colours behind the messages and lack of imagery mean that the messages remain the focus of the connect page.
-    - There is a free text section where people can choose to input their contact details or choose to leave it blank - this is the only field within the form that is not required in order to fulfil this user request.
-
-
-
-- From user story 3;
-    - There is a free text section where people can choose to input their contact details or choose to leave it blank - this is the only field within the form that is not required in order to fulfil this user request.
-    - The delayed posting/schedule feature of the messages and once a day release of the scheduled posts fosters the slow reading and once a day visits rather than endless scrolling. The newest messages appear at the top to ensure users are not scrolling through countless messages to review the most recent.
-    - Comments are not enabled in this version and contact details are optional to share limiting trolls or attacks on certain posts. 
-    - The messages and profiles have been kept image free to foster love and friendship at a spiritual level before material judgement
+- From user story - Registration and User Accounts;
+    - The parent can register an account and can view their order history. 
+    - The parent is able to create profiles for their children.
+    - The parent has the abilty to create multiple children accounting for siblings.
+    - The parent is able to delete their and their childrens information from the account easily. 
+    - The forms are set to require completion.
+    - The format and structure of the application allows the course order to be matched to a user profile which is then linked to a child profile. The full realisation of this user story will be complete when the enrolment and capaity models are added. 
 
 
->### User Stories - Business Owner
--  The brand ethos and values have been incorporated into the messaging styling of the site. All users stories have been met to create the requested type of environment where the user would feel safe to freely make meaningful connections.
-- All passwords have been hashed for security. There are elements of defensive programming protecting the user from accidentally deleting their own content and we have implemented user authorisation for access to the update and delete functions of the messages. 
-- The beta test version of Anam Cara captures its core values and provides the raw facility needed to post messages and start garnering a community. This provides the business with the ability to watch how their community utilises the site and listen to feedback about additional features the community would like. Creating a solid base allows the business to equate what features they can add and use to scale the community in a sustainable way. 
+- From user story - Purchasing and Checkout;
+    - Parents can select the course of choice from the correct swim level and purchase it for their child. 
+    - Parents have access to the streamlined STRIPE payment format. 
+    - admin have the ability to track orders. 
+    - the capacity for locations has been set but this user story will not be fully complete until the enrolment and its connected capacity model is created. 
+
+
+>### User Stories - Business Owner -Admin & Course Management
+-  All the relevant information is collected from the child profile and linked to a guardian so that all ability, age, health and emergency contact information is displayed easy to hand. 
+- Admin have the ability to edit orders abd swap the course_level
+- The addition of the enrolment and capacity models will enable automatic manaagement of course capacity. Currently the course capacity is set to the capacity at the venue and will be manually managed by the admin staff. 
 
 
 
 <a name="bugs"></a>
 ## Known Bugs
 
-- One potential bug known of at the time of submission - Not all notes appear to be listed in a descending order from most recently added first. This was fully tested locally and found to be fine but one blip shown when users posted via heroku app. 
+- No known bugs.  
 
 
 ## Bugs & challenges experienced during the build
 
 
-- The largest challenge faced was the inability to migrate my database changes half way through the build. I built out the basic CRUD function first and foremost and only when i was happy with that did i attempt to add user authentication. The additional table for the user data migrated organically through git push however the additional user_id column added to the original Note table did not migrate. After endless attempts to update and migrate the database to Heroku/ElephantSQL i took the decision to delete the ElephantSQL instance and Heroku App and work through the deployment steps again. This has fixed the bug. Deletion of Heroku & ElephantSQL linked to your app is not recommended due to the data loss implications, however in this instance the data base was blank and so posed not risk to the build. 
+- I personally found the placement of the elements within the for loops and if else elements within the html templates tricky. The second child profile to be added did not inherit the normal bootsrtap Accordion styling. I discovered that i was starting the for loop inside the accordion elemey instead of outside of encaplutaing the form. 
 
-- The addition of the Delete Modal in the notes.html allowing the bootstrap modal to pop up when the trash can icon was selected appeared to create a bug within the code. On closer inspection the Delete Modal was not within the for loop and it did not have not_id associated with it. This was picked up by Jason on tutoring support. Once the issue was discovered I moved the Delete modal into the for loop, setting the delete button to call the delete route and pass the note_id value. This rectified the delete bug and restored the Delete function.
-
-- All Flash messages functioned as expected apart from the flash to flag an invalid username or password at login. This was resolved by duplicating the else statement to show the message for both an incorrect username or password without disclosing to the user which field was inputted incorrectly.
-
-- I experienced issues with implementing a Jinja Templating filter to allow the messages to appear in reverse order. After further research i discovered to effect this change i only needed to make a change within the routes.py file, creating a descending query order. 
-
-- Initially the form was not passing the submission date information to the database. On further inspection the name, ID & value had an extra note_ at the start of them. This was removed and the input functioned correctly. 
+- The more complex hero sections with forms in them on the checkout and profile pages were displaying no margin top on smaller screen sizes making the header and paragraph text unreadable. They were also scrolling vertically but i could not get the background image to cover leaving an overlap and blank space on scrolling. This caused me great frustration and in the end I opted to replace the more complex container structure with a simple container and upload an additional background images that contained the overlay from the previous containers. These containers mow display all of their content and the image stretches approproiately on smaller screen sizes. 
