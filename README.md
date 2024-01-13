@@ -204,6 +204,15 @@ These business needs are not only aimed at improving the operational efficiency 
 -  **sign up**
    - sign up form
 
+>#### Features that assist in the Customer/Parent Journey 
+
+- **Clear Home Page Structure** detailing all of the information that you need to know about the facility including location, team members and the founders story with facts and figures to ensure the parent builds trust in Splash. The top of the home page introduces the fact that swim courses are taught through different levels. This moves the customer down into a section where they can identify the four different levels and click through to investigate further and book. 
+- **Individual Level Pages** provided for all 4 levels. This allows the customer a deep dive into the level of swimming taught at each level. The detailed section stipulating what your child must be able to do before entering this level helps the customer/parent choose the correct level of class for the child's ability reducing the potential for the incorrect level to be booked which in turn saves time business time and resources and confusion for the child. 
+The text above the courses available to book, instructs the purchaser that in order to confirm enrolment they will be invited to create a profile for their child. This section stipulates 'Only once your child’s profile is complete will their enrolment in the class be confirmed. Failure to complete your child’s profile will result in your child being removed from the class list and potentially loosing their slot.' This creates urgency and a need for the parent to follow through and create the child profile for the swimmer.
+- **Success Purchase Toast** This pop up provides the invite and reminder to the parent that they now need to log in/create an account and create their child's profile in order to confirm their place on the course. 
+Once the child's profile is added the admin team would manually check the details and email out all of the relative confirmation information to the customer/parent. 
+- **Profile Headers** The Swimming Safely and Child Profiles section headers convey the importance of each section to the customer encouraging them to complete them fully. 
+
 
 ## Splash Swim School Future Iterations
 
