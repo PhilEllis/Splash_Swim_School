@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile, GuardianProfile, ChildProfile
 from .forms import UserProfileForm, GuardianProfileForm, ChildProfileForm
@@ -76,10 +77,16 @@ def delete_guardian(request):
     return redirect('profile')
 
 
+@login_required
 def update_child_profile(request, child_id):
     child = get_object_or_404(ChildProfile, id=child_id)
     guardian_profile = child.guardian
 
+    # Check if the logged-in user is the guardian of the child
+    if guardian_profile.user != request.user:
+        messages.error(request, "You are not authorised to update this profile.")
+        return redirect('profile')
+    
     if request.method == 'POST':
         form = ChildProfileForm(request.POST, instance=child)
         if form.is_valid():
