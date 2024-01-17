@@ -77,7 +77,7 @@
         <!-- Loop through courses and display course-specific details -->
         <form class="form" action="{% url 'add_course_to_bag' %}" method="POST">
           {% csrf_token %}
-          <ul class="ps-0">
+          <ul class="ps-0" style="list-style-type: none;">
               {% for course in courses %}
               <li>
                   <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
