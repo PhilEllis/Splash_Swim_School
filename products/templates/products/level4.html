@@ -79,13 +79,13 @@
           {% csrf_token %}
           <ul class="ps-0">
               {% for course in courses %}
-              <ul>
+              <li>
                   <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
                   <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
                   Start Date: {{ course.start_date }}<br>
                   End Date: {{ course.end_date }}<br>
                   Price: £{{ course.price }}
-              </ul>
+              </li>
               {% endfor %}
           </ul>
           <input type="submit" class="btn-get-started mt-3" id="book-now-btn" value="Book Now">
