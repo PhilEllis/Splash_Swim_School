@@ -30,14 +30,19 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'mb-2 profile-form-input'
+            )
             self.fields[field].label = False
 
 
 class GuardianProfileForm(forms.ModelForm):
     class Meta:
         model = GuardianProfile
-        fields = ['contact_name', 'relationship_to_child', 'emergency_contact_number']
+        fields = [
+            'contact_name', 'relationship_to_child',
+            'emergency_contact_number'
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -53,14 +58,19 @@ class GuardianProfileForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'mb-2 profile-form-input'
+            )
             self.fields[field].label = False
 
 
 class ChildProfileForm(forms.ModelForm):
     class Meta:
         model = ChildProfile
-        fields = ['name', 'date_of_birth', 'confidence_in_water', 'medical_conditions', 'medication']
+        fields = [
+            'name', 'date_of_birth', 'confidence_in_water',
+            'medical_conditions', 'medication'
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -78,7 +88,9 @@ class ChildProfileForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'mb-2 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'mb-2 profile-form-input'
+            )
             self.fields[field].label = False
             if field == 'date_of_birth':
                 self.fields[field].widget.attrs['type'] = 'date'
