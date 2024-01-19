@@ -37,8 +37,10 @@ class UserProfileForm(forms.ModelForm):
 class GuardianProfileForm(forms.ModelForm):
     class Meta:
         model = GuardianProfile
-        fields = ['contact_name', 'relationship_to_child', 'emergency_contact_number']
-
+        fields = [
+            'contact_name', 'relationship_to_child',
+            'emergency_contact_number'
+        ]
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
