@@ -69,7 +69,7 @@ class ChildProfile(models.Model):
     )
     name = models.CharField(max_length=255)
     date_of_birth = models.DateField()
-    cconfidence_in_water = models.CharField(
+    confidence_in_water = models.CharField(
         max_length=50,
         choices=[
             ('Confident', 'Confident'),
