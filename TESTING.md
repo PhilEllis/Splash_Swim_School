@@ -158,18 +158,18 @@ No Warnings
 
 **splash**
 - urls.py - All clear, no errors found
-- settings.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- settings.py - All clear, no errors found
 - asgi.py - All clear, no errors found
 - wsgi.py - All clear, no errors found
 
 **profiles**
 - admin.py - All clear, no errors found
-- forms.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- models.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- forms.py - All clear, no errors found
+- models.py - All clear, no errors found
+- urls.py - All clear, no errors found
+- views.py - All clear, no errors found
 
-**profiles**
+**products**
 - admin.py - All clear, no errors found
 - apps.py - All clear, no errors found
 - models.py - All clear, no errors found
@@ -186,7 +186,7 @@ No Warnings
 - urls.py - All clear, no errors found
 - views.py - All clear, no errors found
 
-**profiles**
+**checkout**
 - admin.py - All clear, no errors found
 - apps.py - All clear, no errors found
 - forms.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
