@@ -13,7 +13,9 @@ def profile(request):
     user_form = UserProfileForm(instance=user_profile)
     orders = user_profile.orders.all()
 
-    guardian_profile, created = GuardianProfile.objects.get_or_create(user=request.user)
+    guardian_profile, created = GuardianProfile.objects.get_or_create(
+        user=request.user
+    )
     guardian_form = GuardianProfileForm(instance=guardian_profile)
     child_form = ChildProfileForm()
 
@@ -25,10 +27,14 @@ def profile(request):
                 messages.success(request, 'Profile updated successfully')
 
         if 'update_guardian' in request.POST:
-            guardian_form = GuardianProfileForm(request.POST, instance=guardian_profile)
+            guardian_form = GuardianProfileForm(
+                request.POST, instance=guardian_profile
+            )
             if guardian_form.is_valid():
                 guardian_form.save()
-                messages.success(request, 'Guardian profile updated successfully')
+                messages.success(
+                    request, 'Guardian profile updated successfully'
+                )
 
         if 'add_child' in request.POST:
             child_form = ChildProfileForm(request.POST)
@@ -36,7 +42,10 @@ def profile(request):
                 child = child_form.save(commit=False)
                 child.guardian = guardian_profile
                 child.save()
-                messages.success(request, f'Child profile for {child.name} added successfully')
+                messages.success(
+                    request,
+                    f'Child profile for {child.name} added successfully'
+                )
                 return redirect('profile')
 
     children = ChildProfile.objects.filter(guardian=guardian_profile)
@@ -84,14 +93,19 @@ def update_child_profile(request, child_id):
 
     # Check if the logged-in user is the guardian of the child
     if guardian_profile.user != request.user:
-        messages.error(request, "You are not authorised to update this profile.")
+        messages.error(
+            request, "You are not authorised to update this profile."
+        )
         return redirect('profile')
-    
+
     if request.method == 'POST':
         form = ChildProfileForm(request.POST, instance=child)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Child profile for {child.name} updated successfully')
+            messages.success(
+                request,
+                f'Child profile for {child.name} updated successfully'
+            )
             return redirect('profile')
     else:
         form = ChildProfileForm(instance=child)
