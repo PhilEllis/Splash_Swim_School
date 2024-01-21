@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from products.models import Course
@@ -29,13 +31,21 @@ def add_course_to_bag(request):
             existing_course_id = next(iter(bag))
             if existing_course_id != course_id:
                 existing_course = Course.objects.get(pk=existing_course_id)
-                messages.info(request, f'Replacing {existing_course.name} with {course.name} in your bag.')
+                messages.info(
+                    request,
+                    (f'Replacing {existing_course.name} with '
+                     f'{course.name} in your bag.')
+                )
             bag.clear()
             bag[course_id] = 1
         else:
             # If the bag is empty, just add the course and show success message
             bag[course_id] = 1
-            messages.success(request, f'{course.name} has been added to your bag, one course to be purchased at a time.')
+            messages.success(
+                request,
+                (f'{course.name} has been added to your bag, '
+                 'one course to be purchased at a time.')
+            )
 
     request.session['bag'] = bag
     return redirect(redirect_url)
