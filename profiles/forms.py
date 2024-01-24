@@ -3,6 +3,9 @@ from .models import UserProfile, GuardianProfile, ChildProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for creating and updating a user profile.
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -37,6 +40,10 @@ class UserProfileForm(forms.ModelForm):
 
 
 class GuardianProfileForm(forms.ModelForm):
+    """
+    Form for creating and updating a guardian profile.
+    Vital emergency contact information.
+    """
     class Meta:
         model = GuardianProfile
         fields = [
@@ -65,6 +72,10 @@ class GuardianProfileForm(forms.ModelForm):
 
 
 class ChildProfileForm(forms.ModelForm):
+    """
+    Form for creating and updating a child's profile.
+    Includes personal info and swimming ability.
+    """
     class Meta:
         model = ChildProfile
         fields = [

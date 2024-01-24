@@ -49,6 +49,10 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 
 class GuardianProfile(models.Model):
+    """
+    Model to store guardian profiles.
+    Includes personal information about guardians of child users.
+    """
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
@@ -62,6 +66,9 @@ class GuardianProfile(models.Model):
 
 
 class ChildProfile(models.Model):
+    """
+    Model to store child profiles linked to their guardians.
+    """
     guardian = models.ForeignKey(
         GuardianProfile,
         on_delete=models.CASCADE,

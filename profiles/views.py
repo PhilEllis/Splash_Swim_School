@@ -9,6 +9,11 @@ from checkout.models import Order
 
 
 def profile(request):
+    """
+    Display and manage the user's profile page.
+    Allows users to update their own profile and guardian information,
+    add child profiles, and view their order history.
+    """
     user_profile = get_object_or_404(UserProfile, user=request.user)
     user_form = UserProfileForm(instance=user_profile)
     orders = user_profile.orders.all()
@@ -63,6 +68,10 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """
+    Display the order history of the user.
+    Shows a past confirmation for an order based on its order number.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -80,6 +89,9 @@ def order_history(request, order_number):
 
 
 def delete_guardian(request):
+    """
+    Delete the guardian profile associated with the current user.
+    """
     guardian_profile = GuardianProfile.objects.get(user=request.user)
     guardian_profile.delete()
     messages.success(request, "Guardian profile deleted successfully.")
@@ -88,6 +100,11 @@ def delete_guardian(request):
 
 @login_required
 def update_child_profile(request, child_id):
+    """
+    Update the profile of a child.
+    This view is protected and can only be accessed by the user who is
+    the guardian of the child.
+    """
     child = get_object_or_404(ChildProfile, id=child_id)
     guardian_profile = child.guardian
 
@@ -119,6 +136,11 @@ def update_child_profile(request, child_id):
 
 
 def delete_child_profile(request, child_id):
+    """
+    Delete a child's profile.
+    This view deletes the profile of a child, identified by child_id,
+    associated with the logged-in user's guardian profile.
+    """
     child = get_object_or_404(ChildProfile, id=child_id)
     if request.method == 'POST':
         child.delete()

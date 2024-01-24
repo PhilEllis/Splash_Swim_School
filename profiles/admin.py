@@ -3,10 +3,16 @@ from .models import ChildProfile, GuardianProfile
 
 
 class ChildProfileAdmin(admin.ModelAdmin):
+    """
+    Customise display of child profiles in Django admin panel.
+    """
     list_display = ('name', 'date_of_birth', 'guardian_info',
                     'confidence_in_water', 'medical_conditions', 'medication')
 
     def guardian_info(self, obj):
+        """
+        String detail containing information about the child's guardian.
+        """
         guardian = obj.guardian
         return (
             f"{guardian.contact_name} ({guardian.relationship_to_child}), "
