@@ -189,18 +189,18 @@ No Warnings
 **checkout**
 - admin.py - All clear, no errors found
 - apps.py - All clear, no errors found
-- forms.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- models.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- forms.py - All clear, no errors found 
+- models.py - All clear, no errors found
 - signals.py - All clear, no errors found
-- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- urls.py - All clear, no errors found 
+- views.py - All clear, no errors found 
 - views.py - All clear, no errors found
 
 **bag**
 - apps.py - All clear, no errors found
 - contexts.py - All clear, no errors found
-- urls.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
-- views.py - All clear, no errors found apart from lines detected that are too long - Given more time i would have cautiously amended these to PEP8 standards
+- urls.py - All clear, no errors found 
+- views.py - All clear, no errors found
 
 
 <a name="#access"></a>
