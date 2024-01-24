@@ -150,7 +150,18 @@ No Warnings
 
 <img src="media/jsvalidation.png" />
 
-- I have run the stripe_elements.js code taken from the CI boutique ado source code. This gives out a warning of 118	Missing semicolon. I have not amended this as i have not wanted to interupt the working given code that has been copied over from the walkthrough. 
+- Reported Metrics - stripe_elements.js (taken directly from Boutique ado walkthrough code)
+There are 5 functions in this file.
+
+Function with the largest signature take 1 arguments, while the median is 1.
+
+Largest function has 10 statements in it, while the median is 5.
+
+The most complex function has a cyclomatic complexity value of 3 while the median is 1.
+
+One undefined variable - 11	Stripe
+
+No Warnings
 
 
 <a name="#python"></a>
