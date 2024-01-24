@@ -3,6 +3,10 @@ from locations.models import Location
 
 
 class Course(models.Model):
+    """
+    Course model for managing information about various courses.
+    Including the variation of level and location choice.
+    """
     LEVEL_CHOICES = (
         ('Level 1', 'Level 1'),
         ('Level 2', 'Level 2'),
@@ -20,4 +24,7 @@ class Course(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
+        """
+        Return the course name as its string representation.
+        """
         return self.name
