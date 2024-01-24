@@ -3,12 +3,20 @@ from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """
+    Inline admin equals line items within the Order admin interface.
+    Allows for viewing and editing individual line items.
+    """
     model = OrderLineItem
     fields = ('course', 'quantity', 'lineitem_total',)
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """
+    Admin interface for the Order model.
+    Provides a detailed view of orders.
+    """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (
@@ -17,6 +25,9 @@ class OrderAdmin(admin.ModelAdmin):
     )
 
     def get_course_names(self, obj):
+        """
+        Retrieve a string of course names for the given order.
+        """
         def get_course_names(self, obj):
             return ", ".join(
                 [line_item.course.name for line_item in obj.lineitems.all()]

@@ -19,6 +19,12 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data before confirming the payment with Stripe.
+    Handles the POST request sent before the form is submitted.
+    Modifies the PaymentIntent to include additional metadata such as the bag,
+    save_info preference, and the username.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -35,6 +41,13 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Render the checkout page and handle the checkout process.
+    Manages the checkout form and processes the payment.
+    If the form is valid and payment is successful, it creates an order and
+    redirects to the checkout success page. It also handles pre-filling the
+    form with user profile information if the user is authenticated.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -139,7 +152,10 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkout process.
+    Confirms the order, saves the user's info.
+    Displays a success message with order details.
+    User is also prompted to complete a child's profile.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
