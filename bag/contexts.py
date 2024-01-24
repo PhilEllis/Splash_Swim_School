@@ -5,6 +5,14 @@ from products.models import Course
 
 
 def bag_contents(request):
+    """
+    Context processor for shopping bag contents.
+    Gathers the items added to the shopping bag stored in the session.
+    Calculates the total cost and the total number of items. 
+    It builds a list of bag items with detailed info about each course.
+    Returns a context dictionary that contains the bag items, total cost, total item count,
+    and grand total which can be used in templates.
+    """
     bag_items = []
     total = Decimal('0.00')
     product_count = 0
