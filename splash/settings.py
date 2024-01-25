@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['splash-swim-school-b17312c07dec.herokuapp.com', 'localhost',
-                 '8000-philellis-splashswimsch-y886wql2wow.ws-eu106.gitpod.io']
+                 '8000-philellis-splashswimsch-ujl9qe9u73r.ws-eu107.gitpod.io']
 
 
 # Application definition
