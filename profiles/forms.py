@@ -1,4 +1,6 @@
 from django import forms
+from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 from .models import UserProfile, GuardianProfile, ChildProfile
 
 
@@ -25,7 +27,17 @@ class UserProfileForm(forms.ModelForm):
             'default_county': 'County, State or Locality',
         }
 
+        # Define regex validator for UK phone number
+        phone_regex = RegexValidator(
+            regex=r'^07\d{9}$',
+            message=("UK Phone number must start with '07' and be exactly "
+                     "11 digits long.")
+        )
+        self.fields['default_phone_number'].validators.append(
+            phone_regex
+        )  # Apply the regex validator to the phone number field
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:
@@ -59,6 +71,14 @@ class GuardianProfileForm(forms.ModelForm):
             'emergency_contact_number': 'Emergency Contact Number',
         }
 
+        # Define regex validator for UK phone number
+        phone_regex = RegexValidator(
+            regex=r'^07\d{9}$',
+            message=("UK Phone number must start with '07' and be exactly "
+                     "11 digits long.")
+        )
+        self.fields['emergency_contact_number'].validators.append(phone_regex)
+
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
@@ -88,17 +108,22 @@ class ChildProfileForm(forms.ModelForm):
         placeholders = {
             'name': 'Child’s Name',
             'date_of_birth': 'Date of Birth (YYYY-MM-DD)',
-            'confidence_in_water': 'Confidence in Water',
             'medical_conditions': 'Medical Conditions',
             'medication': 'Medication',
         }
 
+        # Add a custom placeholder choice for 'confidence_in_water'
+        self.fields['confidence_in_water'].choices = [
+            ('', 'Select your child\'s confidence in the water')
+        ] + list(self.fields['confidence_in_water'].choices)
+
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'confidence_in_water':  # Exclude 'confidence_in_water'
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = (
                 'mb-2 profile-form-input'
             )
