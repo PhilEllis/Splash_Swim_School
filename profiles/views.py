@@ -8,6 +8,7 @@ from .forms import UserProfileForm, GuardianProfileForm, ChildProfileForm
 from checkout.models import Order
 
 
+@login_required
 def profile(request):
     """
     Display and manage the user's profile page.
@@ -30,6 +31,12 @@ def profile(request):
             if user_form.is_valid():
                 user_form.save()
                 messages.success(request, 'Profile updated successfully')
+            else:
+                messages.error(
+                    request,
+                    'An error has occurred while updating your profile. '
+                    'Please check the form.'
+                )
 
         if 'update_guardian' in request.POST:
             guardian_form = GuardianProfileForm(
@@ -39,6 +46,12 @@ def profile(request):
                 guardian_form.save()
                 messages.success(
                     request, 'Guardian profile updated successfully'
+                )
+            else:
+                messages.error(
+                    request,
+                    'An error has occurred while updating the '
+                    'guardian profile. Please check the form.'
                 )
 
         if 'add_child' in request.POST:
@@ -52,6 +65,12 @@ def profile(request):
                     f'Child profile for {child.name} added successfully'
                 )
                 return redirect('profile')
+            else:
+                messages.error(
+                    request,
+                    'An error has occurred while adding a child profile. '
+                    'Please check the form.'
+                )
 
     children = ChildProfile.objects.filter(guardian=guardian_profile)
 
@@ -67,17 +86,23 @@ def profile(request):
     return render(request, 'profiles/profile.html', context)
 
 
+@login_required
 def order_history(request, order_number):
     """
-    Display the order history of the user.
-    Shows a past confirmation for an order based on its order number.
+    View an individual order's history.
+    Only accessible by the user who made the order.
     """
-    order = get_object_or_404(Order, order_number=order_number)
+    order = get_object_or_404(
+        Order,
+        order_number=order_number,
+        user_profile=request.user.userprofile
+    )
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
+    messages.info(
+        request,
+        (f'This is a past confirmation for order number '
+         f'{order_number}.')
+    )
 
     template = 'checkout/checkout_success.html'
     context = {
@@ -113,7 +138,7 @@ def update_child_profile(request, child_id):
         messages.error(
             request, "You are not authorised to update this profile."
         )
-        return redirect('profile')
+        return redirect('login')
 
     if request.method == 'POST':
         form = ChildProfileForm(request.POST, instance=child)
@@ -135,6 +160,7 @@ def update_child_profile(request, child_id):
     return render(request, 'profiles/update_child_profile.html', context)
 
 
+@login_required
 def delete_child_profile(request, child_id):
     """
     Delete a child's profile.
@@ -142,8 +168,18 @@ def delete_child_profile(request, child_id):
     associated with the logged-in user's guardian profile.
     """
     child = get_object_or_404(ChildProfile, id=child_id)
+    guardian_profile = child.guardian
+
+    if guardian_profile.user != request.user:
+        messages.error(
+            request,
+            "You are not authorised to delete this profile."
+        )
+        return redirect('login')
+
     if request.method == 'POST':
         child.delete()
         messages.success(request, 'Child profile deleted successfully.')
         return redirect('profile')
+
     return redirect('profile')
