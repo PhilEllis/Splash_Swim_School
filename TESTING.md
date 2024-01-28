@@ -119,18 +119,20 @@ Files Tested
 
 <a name="#html"></a>
 ## HTML5 validator
-each file tested individually not utulising the page source due to the fact the templating in the nav was throwing off the error reports. 
-- base.html - Testing by copying content of html over from the html file directly. Only warnings received due to static urls and templating.
-- index.html - Passed using HTML from View Page Source to remove Jinja Templating and Statci urls (flags up issues with the nav which is inherited from the base - no issues with these elements when testing the Nav).
-- level1.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- level2.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- level3.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- level4.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- bag.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- checkout.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- checkout_success.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- profile.html - Passed using HTML only - only warnings created when picking up static urls and templating logic.
-- update_child_profile - Passed using HTML only - only warnings created when picking up static urls and templating logic.
+each file tested either by URL or individually utulising the page source for those files protected by login. 
+
+- index.html - Passed - No errors or warnings to show.
+- level1.html - Passed - No errors or warnings to show.
+- level2.html - Passed - No errors or warnings to show.
+- level3.html - Passed - No errors or warnings to show.
+- level4.html - Passed - No errors or warnings to show.
+- bag.html - Passed - No errors or warnings to show.
+- checkout.html - Passed - No errors or warnings to show.
+- checkout_success.html - Passed - No errors or warnings to show.
+- profile.html - Passed - No errors or warnings to show.
+- update_child_profile - Passed - No errors or warnings to show.
+- 404.html - Passed - No errors or warnings to show.
+- 500.html - Passed - No errors or warnings to show.
 
 
 <a name="#js"></a>
@@ -162,6 +164,16 @@ The most complex function has a cyclomatic complexity value of 3 while the media
 One undefined variable - 11	Stripe
 
 No Warnings
+
+- Reported Metrics - countryfield.js (taken directly from Boutique ado walkthrough code)
+There is only one function in this file.
+
+It takes no arguments.
+
+This function contains 4 statements.
+
+Cyclomatic complexity number for this function is 2.
+
 
 
 <a name="#python"></a>
@@ -222,7 +234,6 @@ No Warnings
 
 ### Wave testing
 - Wave testing highlighted several contrasting issues throughout with the light blue against the white. This branding is pivitol to the site and getting user feedback nobody from the target audience have had issues with the general contrast. This is definitely something to take into consideration in the future when the team do any further rebranding.  
-- Wave testing has identified errors in reagrds to the blank social media links and the templating nav links. 
 
 
 <a name="#compatibility"></a>
@@ -295,3 +306,22 @@ No Warnings
 - Error thrown when user clicked the book now button to purchase a course without selecting a radio button against a course product. This was righted with custom JS to disable the book now button until a radio button is selected.
 
 - The more complex hero sections with forms in them on the checkout and profile pages were displaying no margin top on smaller screen sizes making the header and paragraph text unreadable. They were also scrolling vertically but i could not get the background image to cover leaving an overlap and blank space on scrolling. This caused me great frustration and in the end I opted to replace the more complex container structure with a simple container and upload an additional background images that contained the overlay from the previous containers. These containers mow display all of their content and the image stretches approproiately on smaller screen sizes. 
+
+## Resubmision Comments
+
+**Criterion** | **Meets Criterion** | **Reason** | **Action** 
+----------|----------|----------|----------
+3.1 | No	| Registration for new users not successful due to lack of confirmation emails being sent out. | Emails are now connected and sent out to the new user in order for them to verify the email linked to their account.
+3.3 | No | The Child profile model can be edited using the URL and though trying to manipulate it leads to a 500 server error, the ultimate record is edited at the end which indicates poor defensive design. | The profile as a whole has been protected with a login required decorator as has the update child profile with additional logic to ensure the user updating the profile is the linked guardian.
+1.1 | No | Site is intuitive and meets the expectations of the target audience (UAT carried out). The Product Management link for the Admin does not work. | The link was unintentionaly left in the published site. This has since been removed and management of the courses is conducted via the default Django admin interface.
+1.2 | No | Fails to pass through the official validator | All pages now pass through all respective Validators.
+
+### Additional Feedback
+
+ - Implementing accurate form validation will enhance functionality.
+
+			 - I have taken this feedback on board and have implemented Regex validation for both contact number fields in the user profile & guardian profile to ensure the correct number format is adhered to. 
+
+ - Providing a clear rationale for user registration before specific actions will further enrich the user experience
+ 
+		- I have detailed the user journey and given prompts within the readme. There are text sections within the levels pages that outlines why they should login and create the child profile. There is a call to action within the success message at checkout telling them that is the next step along with a reminder above the order view that directs them to head to their account to add their child's details in order to confirm their child's place on the course. On the product levels pages it is detailed that failure to add the child's details will result in them loosing their spot of the course. Only once the child details are added will their enrolment be confirmed. 

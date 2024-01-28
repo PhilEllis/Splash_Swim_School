@@ -230,6 +230,8 @@ By strategically placing key elements within our existing models, such as `Child
 
 - Once the enrolment and capacity models are in place and email GDPR checks are active the third iteration would be to enable the management to upload the individual swimmers reports to the child's profile so that the user can login to view their child's progress. This process is currently done manually by email or by parents asking at the reception desk. This feature would greatly enhance the parents interaction with the service but also dramatically cut admin time. 
 
+- Additionally we would look to update the Guardian profile so that it was mandatory to complete this section of the profile before access could be gained to complete the child profiles. Thought will also have to be given regarding updating the child profiles to enable them to be linked to additional guardian information as a back up contact or in the case that siblings have different parentage. 
+
 
 <a name="technologies"></a>
 
