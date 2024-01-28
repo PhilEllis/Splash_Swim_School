@@ -170,7 +170,14 @@ These business needs are not only aimed at improving the operational efficiency 
     - All Pages have been built around Bootstrap 5'S responsive grid layout and provide the same functionality regardless of the viewport size,
 - **Footer**
     - The footer consistent through the site provides an additional navigation option thought to be helpful on the longer pages. 
-    
+ - **Custom Error Pages**
+    - Custom 404 page to redirect the user when they try to access a non existent or removed page. This presents the user with the option to navigate home or provides the number for the the customer to call splash directly. 
+
+        <img src="media/404copy.jpg" height="200px" />
+
+    - Custom 500 server issue page to catch customers when server issues are experienced.  This presents the user with the option to navigate home or provides the number for the the customer to call splash directly. 
+
+        <img src="media/500copy.jpg" height="200px" />
 
 
 >### Specific to Pages
@@ -306,9 +313,14 @@ By strategically placing key elements within our existing models, such as `Child
             -   [Level 2 Teacher](https://www.istockphoto.com/photo/swimming-coach-with-a-wistle-and-stopwatch-posing-in-an-indoor-swimming-pool-gm1422360253-467670429?clarity=false) - Image by Ljupco
             -  [Level 3 Teacher](https://www.istockphoto.com/photo/female-swimming-coach-with-a-wistle-and-stopwatch-around-her-neck-posing-inside-an-gm1426309365-470551808?clarity=false) - Image by Ljupco
             -   [Level 4 Teacher](https://www.istockphoto.com/photo/portrait-proud-and-coach-at-a-swimming-pool-for-training-exercise-and-practice-at-gm1486027348-511877271?clarity=false) - Image by Peopleimages
+    - [404 & 500 background image](https://www.istockphoto.com/vector/drifting-life-raft-and-shark-fins-in-the-sea-water-gm1295581514-389260868?clarity=false) - Image by MAHIJO
    
 - [Figma](https://www.figma.com/file/ladBUkKqWA50bv0xDRaMUH/SPLANETS?node-id=0%3A1&t=rRbFBuY40vnsdoR4-1) used to create mock up designs
 - [amiresponsive](https://ui.dev/amiresponsive) Used to create the live image capture of site
+-  [Make Use Of](https://www.makeuseof.com/create-custom-404-error-page-django/) Used as a guide to build the 404 & 500 error pages. 
+- [Regex Generator](https://regex-generator.olafneumann.org/?sampleText=07891547662&flags=i&selection=0%7CNumber) used to help familiarised myself with Regex code and trial generating UK phone number code. 
+- [Regex Library](https://regexlib.com/Search.aspx?k=uk+phone&AspxAutoDetectCookieSupport=1) Assisted with guiding me with the available uk phone number formats.
+- [Django ORM - Model Field Validators / Writing Custom Validators / ModelForms](https://www.youtube.com/watch?v=1x0Zdukpjrs) Youtube video by **By BugBytes** regarding creating custom form validators.
 
 <a name="#testing"></a>
 ## Testing
@@ -385,7 +397,7 @@ If you wish to clone or download this repository to your local device you can fo
 
 >### Code 
 
-- The core of the application has been derived from the code Institute Relational Database Walkthrough Boutique Ado and amended to fit the needs of my application. I tried to make a strong distinction within the structure of the site to clearly mark the difference and try to challenge myself to adapt the walkthrough. The areas that are less distinguished are that of the bag, Checkout app, Stripe and initial User Porfile. 
+- The core of the application has been derived from the code Institute Relational Database Walkthrough Boutique Ado and amended to fit the needs of my application. I tried to make a strong distinction within the structure of the site to clearly mark the difference and try to challenge myself to adapt the walkthrough. The areas that are less distinguished are that of the bag, Checkout app, Stripe and initial User Profile. 
 - [Bootstrapmade](https://bootstrapmade.com/) - used as an alternative to the Bootstrap Library to form the base HTML & CSS for structure of the site. The following sections were taken for the following templates, stripped and edited with custom CSS and additional HTML to sit in line with the site design and layout.
 	- Bizpage Template- Hero CSS - Contact Us - Footer
 	- Newbiz Template- Level1-4 Main content structure
@@ -398,6 +410,8 @@ If you wish to clone or download this repository to your local device you can fo
 
 - Styling of Radio Input taken from the basis provided within https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons
 - JS to activate the messages via toast is my custom js. all the rest of the JS code is that from the walkthrough.
+- - Assistance received from **Roman Rakic** Code Institute tutor who gave guidance via Slack on resolving issues with the 404 & 500 page builds and also assisted with providing information on how to link to an external background image for the 500 page.
+- Assistance received from **Niki Tester** CI Alumni via slack providing the logic to break down Line 145 in the webhook_handler.py
 - All of the rest of the code was written by the author - Philippa Ellis
 
 
