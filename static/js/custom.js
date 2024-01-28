@@ -1,3 +1,10 @@
+/**
+ * Custom JS to show and hide toast messages 
+ * 
+ * Custom JS to disable book now button until
+ * a radio button has been selected for a course
+ * 
+ */
 // toast-init.js
 document.addEventListener('DOMContentLoaded', function () {
     var toastElList = [].slice.call(document.querySelectorAll('.toast'));
