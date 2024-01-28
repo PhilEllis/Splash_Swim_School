@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
+from django.forms.widgets import DateInput
 from .models import UserProfile, GuardianProfile, ChildProfile
 
 
@@ -102,31 +103,23 @@ class ChildProfileForm(forms.ModelForm):
             'name', 'date_of_birth', 'confidence_in_water',
             'medical_conditions', 'medication'
         ]
+        widgets = {
+            'date_of_birth': DateInput(attrs={'class': 'mb-2 profile-form-input', 'type': 'date'}),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
             'name': 'Child’s Name',
-            'date_of_birth': 'Date of Birth (YYYY-MM-DD)',
             'medical_conditions': 'Medical Conditions',
             'medication': 'Medication',
         }
 
-        # Add a custom placeholder choice for 'confidence_in_water'
-        self.fields['confidence_in_water'].choices = [
-            ('', 'Select your child\'s confidence in the water')
-        ] + list(self.fields['confidence_in_water'].choices)
+        # Set the label for 'date_of_birth'
+        self.fields['date_of_birth'].label = 'Date of Birth (YYYY-MM-DD)'
 
         for field in self.fields:
-            if field != 'confidence_in_water':  # Exclude 'confidence_in_water'
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = (
-                'mb-2 profile-form-input'
-            )
-            self.fields[field].label = False
-            if field == 'date_of_birth':
-                self.fields[field].widget.attrs['type'] = 'date'
+            if field in placeholders:
+                self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+            if field != 'confidence_in_water' and field != 'date_of_birth':
+                self.fields[field].label = False
