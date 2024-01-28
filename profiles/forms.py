@@ -104,7 +104,10 @@ class ChildProfileForm(forms.ModelForm):
             'medical_conditions', 'medication'
         ]
         widgets = {
-            'date_of_birth': DateInput(attrs={'class': 'mb-2 profile-form-input', 'type': 'date'}),
+            'date_of_birth': DateInput(attrs={
+                'class': 'mb-2 profile-form-input',
+                'type': 'date'
+            }),
         }
 
     def __init__(self, *args, **kwargs):
@@ -120,6 +123,8 @@ class ChildProfileForm(forms.ModelForm):
 
         for field in self.fields:
             if field in placeholders:
-                self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = (
+                    placeholders[field]
+                )
             if field != 'confidence_in_water' and field != 'date_of_birth':
                 self.fields[field].label = False
