@@ -79,11 +79,11 @@
               </div>
             </div>
             <div id="loading-overlay">
-            <h1 class="text-light logo-font loading-spinner">
+            <div class="text-light logo-font loading-spinner">
             <span class="icon">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
             </span>
-            </h1>
+          </div>
          </div>
   </section>
     <!-- End Hero Section -->
@@ -126,14 +126,14 @@
       <div class="row">
       <div class="col-10 mx-auto">
         {% for child in children %}
-      <div class="accordion mb-5" id="childrenAccordion">
+      <div class="accordion mb-5" id="childrenAccordion{{ child.id }}">
               <div class="accordion-item">
-                  <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                  <h2 class="accordion-header" id="heading{{ child.id }}">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ child.id }}" aria-expanded="true" aria-controls="collapse{{ child.id }}">
                         {{ child.name }}
                       </button>
                   </h2>
-                  <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#childrenAccordion">
+                  <div id="collapse{{ child.id }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ child.id }}" data-bs-parent="#childrenAccordion{{ child.id }}">
                       <div class="accordion-body">
                           <strong>Name:</strong> {{ child.name }}<br>
                           <strong>Date of Birth:</strong> {{ child.date_of_birth }}<br>
@@ -212,5 +212,5 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
