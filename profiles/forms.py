@@ -30,8 +30,8 @@ class UserProfileForm(forms.ModelForm):
 
         # Define regex validator for UK phone number
         phone_regex = RegexValidator(
-            regex=r'^07\d{9}$',
-            message=("UK Phone number must start with '07' and be exactly "
+            regex=r'^0\d{10}$',
+            message=("UK Phone number must start with '0' and be exactly "
                      "11 digits long.")
         )
         self.fields['default_phone_number'].validators.append(
@@ -74,8 +74,8 @@ class GuardianProfileForm(forms.ModelForm):
 
         # Define regex validator for UK phone number
         phone_regex = RegexValidator(
-            regex=r'^07\d{9}$',
-            message=("UK Phone number must start with '07' and be exactly "
+            regex=r'^0\d{10}$',
+            message=("UK Phone number must start with '0' and be exactly "
                      "11 digits long.")
         )
         self.fields['emergency_contact_number'].validators.append(phone_regex)
