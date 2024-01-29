@@ -320,8 +320,23 @@ Cyclomatic complexity number for this function is 2.
 
  - Implementing accurate form validation will enhance functionality.
 
-			 - I have taken this feedback on board and have implemented Regex validation for both contact number fields in the user profile & guardian profile to ensure the correct number format is adhered to. 
+	 - I have taken this feedback on board and have implemented Regex validation for both contact number fields in the user profile & guardian profile to ensure the correct number format is adhered to. 
 
  - Providing a clear rationale for user registration before specific actions will further enrich the user experience
- 
-		- I have detailed the user journey and given prompts within the readme. There are text sections within the levels pages that outlines why they should login and create the child profile. There is a call to action within the success message at checkout telling them that is the next step along with a reminder above the order view that directs them to head to their account to add their child's details in order to confirm their child's place on the course. On the product levels pages it is detailed that failure to add the child's details will result in them loosing their spot of the course. Only once the child details are added will their enrolment be confirmed. 
+
+	- I have detailed the user journey and given prompts within the readme. There are text sections within the levels pages that outlines why they should login and create the child profile. There is a call to action within the success message at checkout telling them that is the next step along with a reminder above the order view that directs them to head to their account to add their child's details in order to confirm their child's place on the course. On the product levels pages it is detailed that failure to add the child's details will result in them loosing their spot of the course. Only once the child details are added will their enrolment be confirmed. 
+
+- The Assessor has provided the following additional feedback;
+
+       Ensuring the delivery of order success/failure emails and introducing a custom product management form or view for CRUD operations on the front end are vital for a complete project.
+
+    - This is something i have gone over in detail with my Mentor who has researched and reassured me that these points do not dictate a pass or fail but would obviously enhance my project. I have unfortunately come across an issue with STRIPE who have made an update that removes direct access to the charges attribute from the payment intent and i have not had time to amend the code to adjust to this update. In an ideal world I would have had time to resolve this issue but In my defence I would like to highlight the following;
+
+    - There is no trace within the Milestone Project 4 criteria that states there must be a custom product management form or view. CRUD options on the front end are present within the guardian and child profiles. 
+
+    - There is also no trace within the Project criteria that states order success/failure emails must be sent. There is reference to reports within 4.2 whereby it states - Implement a feedback system that reports successful and unsuccessful purchases to the user, with a helpful message. Which i do via the checkout forms.py. The Assessor has passed me on this section providing the following feedback;
+
+    **Criterion** | **Meets Criterion** | **Reason** | **Action** 
+    ----------|----------|----------|----------
+    4.2 | Yes	| Website intuitively provides options for effective user interactions | As this criteria is satisfied it has not been expanded upon.
+
